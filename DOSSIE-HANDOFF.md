@@ -1,5 +1,7 @@
 # Dossiê de Handoff · Pesquisa de ICP do Antessala
 
+> **Atualização 30/08/2026:** este dossiê cobre a fase de pesquisa (até 29/08). A entrega do hackathon está em `entrega/`; o consolidado vigente é a **V4** (`fontes/antessala-documento-consolidado-v4.html`). As tarefas abertas abaixo (entrevistas, promoção da jornada) continuam válidas para depois do evento.
+>
 > Para retomar este trabalho no **Claude Code via terminal**, onde não há bloqueio de rede.
 > Tudo o que foi feito, o que ficou aberto, e como continuar sem perder rigor.
 >

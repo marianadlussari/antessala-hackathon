@@ -1,5 +1,7 @@
 # Entrega · Hackathon ATON · 30/08/2026
 
+> **O que é definitivo:** `antessala_pitch.html` (deck) + `Antessala Prototipo (standalone)2.html`. `Antessala-pitch-final.md` e `interface-output.html` são material de apoio anterior ao deck — onde divergirem (canal, hora de entrega, planos de preço, "all-in-one"), **vale o deck**. O brief da Fórmula é o exemplo **real**, com fontes; o brief dentro do deck (Nexus Tech) é **ilustrativo**. Os gabaritos em `../contexto/` são do cenário "Antessala vende Antessala"; o card da entrega é do cenário "PME X vende para a Fórmula".
+
 | Arquivo | O que é |
 |---|---|
 | `antessala_pitch.html` + `Antessala Prototipo (standalone)2.html` | **Deck final do pitch (8 blocos, 5 min, notas do apresentador) com o protótipo navegável embutido** — abrir o deck no Chrome; o protótipo carrega por iframe (mesma pasta) |
