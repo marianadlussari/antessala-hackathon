@@ -2,7 +2,7 @@
 
 Repositório do grupo para o **Antessala — Meeting Readiness Agent**: agente autônomo que detecta uma reunião comercial no calendário, pesquisa empresa e participantes e entrega um *readiness brief* antes da conversa, para PMEs brasileiras com 3–15 vendedores.
 
-> **Entrega do hackathon ATON (30/08/2026):** pasta [`entrega/`](entrega/) — deck final (`antessala_pitch.html`, com protótipo embutido), brief real, interface, roteiro e resumo. Documento consolidado vigente: **V4** (`fontes/antessala-documento-consolidado-v4.html`); o V3 fica como histórico. **Onde qualquer material de apoio divergir do deck, o deck manda.**
+> **Entrega do hackathon ATON (30/08/2026):** pasta [`entrega/`](entrega/) — deck final (`antessala_pitch_standalone.html`, com protótipo embutido), brief real, interface, roteiro e resumo. Documento consolidado vigente: **V4** (`fontes/antessala-documento-consolidado-v4.html`); o V3 fica como histórico. **Onde qualquer material de apoio divergir do deck, o deck manda.**
 
 ## Como ler este repositório (ordem sugerida)
 
