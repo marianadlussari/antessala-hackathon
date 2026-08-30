@@ -7,6 +7,7 @@
 | `build_brief_formula.py` | Gerador do card (HTML → PDF via Chrome headless) |
 | `Antessala-pitch-final.md` | Roteiro falado de apoio + corte de 3 min + Q&A decorado |
 | `Antessala-V4-pronto-e-o-que-falta.pdf` / `.md` | Resumo executivo: o que está pronto e o que falta |
+| `../fontes/o-fluxo-da-antessala-v2.html` | "O caminho que o Antessala percorre" — Etapa 0 + 5 etapas + regra inegociável (doc do grupo, 30/08; absorvido na V4 §7C) |
 | `../fontes/antessala-documento-consolidado-v4.html` | Documento consolidado V4 (tese, ICP, evidências auditadas, arquitetura, custo unitário, MVP, Q&A) |
 
 Gabaritos do MVP em `../contexto/`. Decisões da jornada em `../jornada-do-cliente.md`.

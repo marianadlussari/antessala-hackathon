@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Antessala · O caminho</title>
+<style>
+:root{
+  --bg:#0e1218; --paper:#161c25; --paper2:#1d2430;
+  --ink:#eef2f8; --muted:#93a1b5; --line:#2a3443;
+  --accent:#6c5ce7; --accent2:#a78bfa;
+  --go:#22c55e; --warn:#f59e0b; --risk:#ef4444; --cyan:#22d3ee;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+header{padding:36px 0 22px;border-bottom:1px solid var(--line)}
+.kicker{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);font-weight:800}
+h1{margin:.35rem 0 .25rem;font-size:clamp(1.9rem,4vw,2.9rem);letter-spacing:-.03em;line-height:1.05}
+.sub{color:var(--muted);margin:0}
+
+/* ETAPA 0 — camada persistente */
+.zero{
+  margin:26px 0 8px;border:2px solid var(--cyan);border-radius:16px;
+  background:linear-gradient(180deg,rgba(34,211,238,.12),rgba(34,211,238,.03));
+  padding:20px 22px;
+}
+.zero .z-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.zero .z-n{
+  width:38px;height:38px;border-radius:11px;background:var(--cyan);color:#06232b;
+  font-weight:900;display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex:none;
+}
+.zero h2{margin:0;font-size:1.2rem;letter-spacing:-.01em}
+.zero .once{
+  background:rgba(34,211,238,.16);border:1px solid rgba(34,211,238,.5);
+  border-radius:999px;padding:4px 11px;font-size:.75rem;font-weight:800;
+  text-transform:uppercase;letter-spacing:.06em;color:#a5eefc;
+}
+.zero p{margin:.45rem 0;color:#cdeff7;font-size:.95rem}
+.zero .cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.zbox{background:rgba(10,25,32,.5);border:1px solid rgba(34,211,238,.28);border-radius:12px;padding:13px 15px}
+.zbox b{display:block;font-size:.8rem;text-transform:uppercase;letter-spacing:.07em;color:#7fdcf0;margin-bottom:6px}
+.zbox ul{margin:0;padding-left:17px}
+.zbox li{margin:.24rem 0;font-size:.88rem;color:#d6f2f9}
+
+.feeds{
+  text-align:center;color:var(--cyan);font-size:.85rem;font-weight:700;
+  letter-spacing:.05em;margin:12px 0 2px;
+}
+.feeds .bar{
+  display:block;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+  margin:8px auto 10px;max-width:70%;
+}
+
+.cycle-label{
+  display:flex;align-items:center;gap:10px;margin:24px 0 4px;
+  font-size:.76rem;text-transform:uppercase;letter-spacing:.14em;
+  color:var(--muted);font-weight:800;
+}
+.cycle-label .rule{flex:1;height:1px;background:var(--line)}
+
+.stage{margin:20px 0;display:grid;grid-template-columns:132px 1fr;gap:16px;align-items:start}
+.stage-label{
+  background:var(--paper2);border:1px solid var(--line);border-radius:12px;
+  padding:12px 10px;text-align:center;
+}
+.stage-label .n{
+  width:34px;height:34px;margin:0 auto 6px;border-radius:10px;
+  background:var(--accent);color:#fff;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+}
+.stage-label .t{font-size:.82rem;font-weight:800;letter-spacing:.02em}
+.stage-body{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.stage-body h3{margin:0 0 6px;font-size:1.05rem}
+.stage-body p{margin:.3rem 0;font-size:.94rem;color:#d7dee9}
+.stage-body p.q{color:var(--muted);font-size:.88rem;font-style:italic}
+.uses{
+  margin-top:10px;padding:9px 12px;border-radius:10px;
+  background:rgba(34,211,238,.09);border-left:3px solid var(--cyan);
+  font-size:.87rem;color:#bfeaf5;
+}
+
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.chip{background:var(--paper2);border:1px solid var(--line);border-radius:999px;padding:5px 11px;font-size:.82rem;color:#cbd5e1}
+.chip.free{border-color:rgba(34,197,94,.45);color:#a7f3c8}
+.chip.paid{border-color:rgba(167,139,250,.45);color:#d8ccff}
+.chip.weak{border-color:rgba(239,68,68,.4);color:#fca5a5}
+
+.arrow{text-align:center;color:var(--accent2);font-size:1.4rem;margin:-6px 0}
+
+.gate{
+  border:2px solid var(--warn);border-radius:14px;
+  background:linear-gradient(180deg,rgba(245,158,11,.13),rgba(245,158,11,.04));
+  padding:16px 18px;margin:6px 0;
+}
+.gate h3{margin:0 0 6px;color:#fde3ad}
+.gate p{color:#f7e3c2;margin:.3rem 0;font-size:.93rem}
+.split{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:10px}
+.tag{border-radius:10px;padding:10px 12px;font-size:.86rem;border:1px solid}
+.tag.ok{background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.45)}
+.tag.hyp{background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.45)}
+.tag.unk{background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.45)}
+.tag b{display:block;margin-bottom:3px}
+
+.card-out{background:var(--paper2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-top:10px}
+.card-out ol{margin:.3rem 0 0;padding-left:20px}
+.card-out li{margin:.28rem 0;font-size:.9rem}
+
+.loop{
+  margin:18px 0 0;border:1px dashed rgba(34,211,238,.5);border-radius:14px;
+  background:rgba(34,211,238,.05);padding:14px 18px;
+}
+.loop h3{margin:0 0 4px;font-size:1rem;color:#a5eefc}
+.loop p{margin:.3rem 0;font-size:.9rem;color:#cdeff7}
+
+.line{display:flex;align-items:center;gap:10px;margin:.5rem 0;font-size:.92rem}
+.dot{width:8px;height:8px;border-radius:50%;flex:none}
+.dot.h{background:var(--cyan)}
+.dot.m{background:var(--go)}
+
+.foot{margin:26px 0 60px;border:1px solid var(--line);border-radius:14px;background:var(--paper);padding:18px 20px}
+.foot h3{margin:0 0 8px;font-size:1.05rem}
+.foot p{margin:.4rem 0;font-size:.93rem;color:#d7dee9}
+
+@media(max-width:820px){
+  .stage{grid-template-columns:1fr}
+  .stage-label{display:flex;align-items:center;gap:10px;text-align:left}
+  .stage-label .n{margin:0}
+  .split,.zero .cols{grid-template-columns:1fr}
+}
+@media print{
+  body{background:#fff;color:#111}
+  .stage-body,.stage-label,.card-out,.foot,.zbox{background:#fff;border-color:#ccc}
+  .stage-label .n{background:#444}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Projeto Antessala</div>
+  <h1>O caminho que o Antessala percorre</h1>
+  <p class="sub">Uma camada que aprende o negócio do cliente. Cinco etapas que rodam a cada reunião. Uma regra inegociável no meio.</p>
+</header>
+
+<!-- ETAPA 0 -->
+<div class="zero">
+  <div class="z-head">
+    <div class="z-n">0</div>
+    <h2>Assimilação — quem é o nosso cliente e o que ele vende</h2>
+    <span class="once">roda uma vez · alimenta tudo</span>
+  </div>
+  <p>Sem esta camada, o produto entrega “tudo o que descobrimos sobre a empresa X”. Com ela, entrega <strong>“por que a empresa X importa para você, e como você entra nisso”</strong>.</p>
+
+  <div class="cols">
+    <div class="zbox">
+      <b>O que o Antessala aprende</b>
+      <ul>
+        <li>O que a PME vende e qual problema resolve</li>
+        <li>Para quem vende — o ICP dela</li>
+        <li>Ticket e ciclo típicos</li>
+        <li>Concorrentes que costuma enfrentar</li>
+        <li>Objeções recorrentes</li>
+        <li><strong>Motivos de perda recorrentes</strong></li>
+      </ul>
+    </div>
+    <div class="zbox">
+      <b>De onde vem — sem dar trabalho ao cliente</b>
+      <ul>
+        <li>Site institucional e materiais → sozinho</li>
+        <li>CRM: negócios ganhos e perdidos</li>
+        <li>CRM: motivos de perda registrados</li>
+        <li>CRM: setores que fecham mais, ticket por perfil</li>
+        <li>Onboarding curto → só o que o vendedor sabe e nunca escreveu</li>
+      </ul>
+    </div>
+  </div>
+  <p style="margin-top:12px"><strong>É o único momento em que o cliente conversa com o produto.</strong> Depois disso, a interface some.</p>
+</div>
+
+<div class="feeds">
+  <span class="bar"></span>
+  ↓ ALIMENTA TODAS AS ETAPAS ABAIXO ↓
+</div>
+
+<div class="cycle-label"><span>Ciclo · roda a cada reunião</span><span class="rule"></span></div>
+
+<!-- 1 -->
+<div class="stage">
+  <div class="stage-label"><div class="n">1</div><div class="t">GATILHO</div></div>
+  <div class="stage-body">
+    <h3>Uma reunião de receita aparece — e ninguém precisou pedir nada</h3>
+    <p>O Antessala observa onde o negócio já vive. Não há botão “gerar briefing”.</p>
+    <div class="chips">
+      <span class="chip paid">CRM: negócio muda de estágio</span>
+      <span class="chip paid">CRM: reunião agendada</span>
+      <span class="chip">Calendário: evento com participante externo</span>
+      <span class="chip">Dashboard próprio (se não há CRM)</span>
+    </div>
+    <p class="q">É aqui que mora o “autopilot”. Se alguém tem que pedir, virou chatbot.</p>
+  </div>
+</div>
+
+<div class="arrow">↓</div>
+
+<!-- 2 -->
+<div class="stage">
+  <div class="stage-label"><div class="n">2</div><div class="t">IDENTIFICAÇÃO</div></div>
+  <div class="stage-body">
+    <h3>Dois ganchos, e todo o resto se desdobra deles</h3>
+    <p><strong>Domínio do e-mail</strong> (<code>@empresa.com.br</code>) → qual empresa é.</p>
+    <p><strong>Nome + empresa</strong> → quem está na mesa.</p>
+    <p class="q">Ponto de atenção: achar o CNPJ a partir do domínio não tem API pronta — resolve-se por busca ou pelo rodapé do site.</p>
+  </div>
+</div>
+
+<div class="arrow">↓</div>
+
+<!-- 3 -->
+<div class="stage">
+  <div class="stage-label"><div class="n">3</div><div class="t">COLETA</div></div>
+  <div class="stage-body">
+    <h3>Coletores em paralelo — cada um traz sinal com fonte</h3>
+    <div class="chips">
+      <span class="chip free">Cadastral · BrasilAPI / ReceitaWS · R$ 0</span>
+      <span class="chip free">Vagas abertas · Gupy, Vagas, Indeed</span>
+      <span class="chip free">Notícias e movimento</span>
+      <span class="chip free">Site institucional</span>
+      <span class="chip weak">Pessoas · só conteúdo profissional público</span>
+    </div>
+    <p style="margin-top:12px"><strong>Interno (quando há CRM):</strong> estágio do negócio, dias parado, valor, histórico, o que foi prometido.</p>
+    <div class="uses">A Etapa 0 diz <strong>o que procurar</strong>: os sinais que importam para quem vende <em>isto</em>, não uma varredura genérica.</div>
+    <p class="q">Prioridade se o tempo apertar: cadastral → vagas → notícias. “Pessoas” é o coletor sacrificável.</p>
+  </div>
+</div>
+
+<div class="arrow">↓</div>
+
+<!-- GATE -->
+<div class="gate">
+  <h3>⚖ A regra inegociável — o que separa isto de um agregador</h3>
+  <p>Toda afirmação carrega a URL de onde veio. <strong>Sem fonte buscada, não vira fato.</strong> Regra determinística, não depende do modelo se comportar.</p>
+  <div class="split">
+    <div class="tag ok"><b>CONFIRMADO</b>Tem fonte. Vai para o brief como fato, com link.</div>
+    <div class="tag hyp"><b>HIPÓTESE</b>Inferido de sinais. Vai marcado, com o porquê.</div>
+    <div class="tag unk"><b>DESCONHECIDO</b>Não achamos. Vira pergunta de discovery — nunca invenção.</div>
+  </div>
+</div>
+
+<div class="arrow">↓</div>
+
+<!-- 4 -->
+<div class="stage">
+  <div class="stage-label"><div class="n">4</div><div class="t">ANÁLISE</div></div>
+  <div class="stage-body">
+    <h3>Dado bruto vira decisão comercial</h3>
+    <p>É o cruzamento que gera insight, não o dado isolado:</p>
+    <div class="card-out">
+      <ol>
+        <li>Negócio parado 45 dias <strong>+</strong> notícia de nova rodada → momento de reativar, o orçamento mudou</li>
+        <li>Proposta enviada <strong>+</strong> 5 vagas de vendedor → a dor que <em>você</em> endereça acabou de crescer</li>
+        <li>Contato trocou de cargo <strong>+</strong> negócio em aberto → risco: o champion mudou</li>
+        <li>Motivo de perda recorrente <strong>+</strong> este negócio → objeção provável nesta call</li>
+      </ol>
+    </div>
+    <div class="uses">Sem a Etapa 0, “contratou 5 vendedores” é ruído. Com ela, é oportunidade — porque o sistema sabe o que o seu cliente resolve.</div>
+  </div>
+</div>
+
+<div class="arrow">↓</div>
+
+<!-- 5 -->
+<div class="stage">
+  <div class="stage-label"><div class="n">5</div><div class="t">ENTREGA</div></div>
+  <div class="stage-body">
+    <h3>O brief chega onde o vendedor já está</h3>
+    <p>No CRM, no e-mail, no WhatsApp ou no Slack — antes da reunião, sem ninguém pedir.</p>
+    <div class="card-out">
+      <strong style="font-size:.9rem">Blocos do readiness brief</strong>
+      <ol>
+        <li><strong>Why now</strong> — por que essa reunião existe</li>
+        <li><strong>O que sabemos</strong> — conta, interlocutor, histórico</li>
+        <li><strong>O que mudou</strong> — sinais recentes</li>
+        <li><strong>Quem está na mesa</strong> — papel provável na decisão</li>
+        <li><strong>O que falta</strong> — gaps de qualificação</li>
+        <li><strong>Riscos</strong> — concorrente, timing, decisor ausente</li>
+        <li><strong>Perguntas críticas</strong> — derivadas dos gaps reais</li>
+        <li><strong>Resultado esperado</strong> — o avanço que a call precisa produzir</li>
+      </ol>
+    </div>
+    <p class="q">Interface transparente: nosso melhor sinal de sucesso é o cliente nunca abrir nossa tela.</p>
+  </div>
+</div>
+
+<!-- LOOP -->
+<div class="loop">
+  <h3>↺ E o ciclo realimenta a Etapa 0</h3>
+  <p>Cada negócio ganho ou perdido volta para o perfil do cliente. O Antessala aprende quais sinais realmente antecedem uma venda <strong>naquele negócio específico</strong>.</p>
+  <p><strong>É aqui que mora a defensabilidade:</strong> coleta de dado público qualquer um replica em um fim de semana. O entendimento acumulado do negócio de um cliente, cruzado com o histórico dele, não.</p>
+</div>
+
+<div class="foot">
+  <h3>A fronteira — onde a máquina para</h3>
+  <div class="line"><span class="dot m"></span> <span><strong>Máquina:</strong> detectar · pesquisar · consolidar · identificar gaps · propor perguntas · definir objetivo provável</span></div>
+  <div class="line"><span class="dot h"></span> <span><strong>Humano:</strong> confirmar dor e orçamento · conduzir a negociação · decidir o rumo comercial</span></div>
+  <p style="margin-top:12px">A máquina não altera nada no mundo — só entrega leitura. Por isso não precisa de aprovação em nenhuma etapa. As decisões que mudam o negócio ficam inteiras com o vendedor.</p>
+</div>
+
+</div>
+</body>
+</html>
