@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)file:///Users/felipemiranda/Downloads/antessala_documento_consolidado_v4.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Antessala | Documento Consolidado V4</title>
+  <style>
+    :root{
+      --bg:#f4f6fa;
+      --paper:#ffffff;
+      --ink:#17202b;
+      --muted:#667085;
+      --line:#e4e7ec;
+      --accent:#5948d9;
+      --accent-dark:#3f33a6;
+      --accent-soft:#efedff;
+      --good:#167553;
+      --good-soft:#eaf6f0;
+      --warn:#986300;
+      --warn-soft:#fff5dd;
+      --risk:#a33d3d;
+      --risk-soft:#fdecec;
+      --shadow:0 12px 32px rgba(24,32,56,.06);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height:1.62;
+    }
+    header{
+      background:linear-gradient(135deg,#141824 0%,#292f4c 100%);
+      color:#fff;
+      padding:64px 24px 54px;
+    }
+    .wrap{max-width:1160px;margin:0 auto}
+    .kicker{
+      font-size:.79rem;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-weight:800;
+      opacity:.72;
+    }
+    h1{
+      margin:.45rem 0 .9rem;
+      font-size:clamp(2.4rem,5vw,4.8rem);
+      line-height:1.02;
+      letter-spacing:-.04em;
+    }
+    .subtitle{
+      max-width:880px;
+      font-size:1.1rem;
+      color:#d8dce8;
+      margin:0;
+    }
+    .meta{margin-top:24px;display:flex;gap:10px;flex-wrap:wrap}
+    .badge{
+      display:inline-block;
+      border:1px solid rgba(255,255,255,.19);
+      background:rgba(255,255,255,.08);
+      border-radius:999px;
+      padding:7px 11px;
+      font-size:.84rem;
+      color:#eef1f8;
+    }
+    nav{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:rgba(255,255,255,.95);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    nav .wrap{
+      display:flex;
+      gap:18px;
+      overflow:auto;
+      white-space:nowrap;
+      padding:11px 24px;
+    }
+    nav a{
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:700;
+      font-size:.9rem;
+    }
+    nav a:hover{color:var(--accent)}
+    main{padding:34px 24px 76px}
+    section{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:30px;
+      margin-bottom:22px;
+    }
+    h2{
+      margin:.05rem 0 1rem;
+      font-size:1.72rem;
+      line-height:1.2;
+      letter-spacing:-.02em;
+    }
+    h3{
+      margin:1.55rem 0 .55rem;
+      font-size:1.15rem;
+      line-height:1.3;
+    }
+    p{margin:.65rem 0 1rem}
+    .lead{font-size:1.08rem;color:#394555}
+    .tldr{
+      border:2px solid var(--accent);
+      background:linear-gradient(180deg,#fbfaff 0%,#f5f3ff 100%);
+    }
+    .section-label{
+      font-size:.78rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      color:var(--accent);
+      margin-bottom:6px;
+    }
+    .decision-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+      margin-top:16px;
+    }
+    .decision{
+      border:1px solid #ded9ff;
+      border-radius:14px;
+      padding:16px;
+      background:#fff;
+    }
+    .decision b{
+      display:block;
+      color:var(--accent);
+      font-size:.77rem;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      margin-bottom:5px;
+    }
+    .callout{
+      border-left:4px solid var(--accent);
+      background:var(--accent-soft);
+      border-radius:10px;
+      padding:18px 20px;
+      margin:18px 0;
+    }
+    .callout.good{border-left-color:var(--good);background:var(--good-soft)}
+    .callout.warn{border-left-color:var(--warn);background:var(--warn-soft)}
+    .callout.risk{border-left-color:var(--risk);background:var(--risk-soft)}
+    .callout strong{display:block;margin-bottom:5px}
+    .quote{
+      margin:18px 0;
+      padding:20px 22px;
+      border-radius:14px;
+      background:#171b28;
+      color:white;
+      font-size:1.2rem;
+      font-weight:760;
+      line-height:1.45;
+      letter-spacing:-.01em;
+    }
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+      margin:18px 0;
+    }
+    .card{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:17px;
+      background:#fbfcfe;
+    }
+    .card .label{
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      font-size:.73rem;
+      font-weight:800;
+      margin-bottom:5px;
+    }
+    .card .big{
+      font-weight:800;
+      line-height:1.3;
+      font-size:1.04rem;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin:16px 0;
+      font-size:.94rem;
+    }
+    th,td{
+      padding:11px 12px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      vertical-align:top;
+    }
+    th{
+      background:#f7f8fb;
+      font-weight:800;
+    }
+    ul,ol{padding-left:22px}
+    li{margin:.36rem 0}
+    .tag{
+      display:inline-block;
+      padding:3px 8px;
+      border-radius:999px;
+      font-size:.75rem;
+      font-weight:800;
+      margin-right:4px;
+    }
+    .confirmed{background:var(--good-soft);color:var(--good)}
+    .hypothesis{background:var(--warn-soft);color:var(--warn)}
+    .unknown{background:var(--risk-soft);color:var(--risk)}
+    .flow{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:10px;
+      margin:18px 0;
+    }
+    .step{
+      border:1px solid var(--line);
+      background:#fbfcfe;
+      border-radius:14px;
+      padding:15px;
+      min-height:124px;
+    }
+    .step .n{
+      width:28px;height:28px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      background:var(--accent);
+      color:white;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+    .check{color:var(--good);font-weight:800}
+    .x{color:var(--risk);font-weight:800}
+    .formula{
+      border:1px dashed #c9c1ff;
+      background:#faf9ff;
+      border-radius:14px;
+      padding:18px;
+      font-weight:760;
+      font-size:1.03rem;
+      margin:12px 0;
+    }
+    .small{font-size:.86rem;color:var(--muted)}
+    .footnote{
+      margin-top:18px;
+      padding-top:14px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:.86rem;
+    }
+    footer{
+      color:var(--muted);
+      font-size:.84rem;
+      padding:0 24px 48px;
+    }
+    @media(max-width:900px){
+      .decision-grid,.grid-3,.flow{grid-template-columns:1fr}
+      section{padding:22px}
+    }
+    @media print{
+      body{background:white}
+      nav{display:none}
+      section{box-shadow:none;break-inside:avoid}
+      header{padding-top:36px}
+      .wrap{max-width:none}
+    }
+
+    /* ===== V4 ADDITIONS ===== */
+    .v4{border-left:4px solid #0e9f9f;background:#effbfb;border-radius:10px;padding:18px 20px;margin:18px 0}
+    .v4 strong{display:block;margin-bottom:5px;color:#0b6b6b}
+    .zero-layer{border:2px solid #0e9f9f;background:linear-gradient(180deg,#f2fdfd,#e7f8f8);border-radius:16px;padding:22px;margin:18px 0}
+    .zero-layer h3{margin-top:0;color:#0b6b6b}
+    .pill-once{display:inline-block;background:#0e9f9f;color:#fff;font-size:.7rem;font-weight:800;
+      text-transform:uppercase;letter-spacing:.07em;padding:4px 10px;border-radius:999px;margin-left:8px;vertical-align:middle}
+    .flow9{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}
+    .stepc{border:1px solid var(--line);background:#fbfcfe;border-radius:14px;padding:14px}
+    .stepc .n{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+      background:var(--accent);color:#fff;font-weight:800;margin-bottom:8px;font-size:.85rem}
+    .stepc.zero .n{background:#0e9f9f}
+    .stepc b{display:block;margin-bottom:3px;font-size:.95rem}
+    .stepc p{margin:.2rem 0 0;font-size:.85rem;color:var(--muted)}
+    .cost{border:1px dashed #c9c1ff;background:#faf9ff;border-radius:14px;padding:18px;margin:14px 0}
+    .cost .big{font-size:1.5rem;font-weight:800;color:var(--accent-dark);letter-spacing:-.02em}
+    .srcbox{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0;background:#fbfcfe}
+    .srcbox .verdict{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;padding:3px 9px;border-radius:999px;margin-right:8px}
+    .verdict.use{background:var(--good-soft);color:var(--good)}
+    .verdict.drop{background:var(--risk-soft);color:var(--risk)}
+    .qa-item{border-bottom:1px solid var(--line);padding:12px 0}
+    .qa-item:last-child{border-bottom:0}
+    .qa-item .q{font-weight:800;color:var(--accent-dark);margin-bottom:4px}
+    .qa-item .a{margin:0;color:#394555}
+    @media(max-width:900px){.flow9{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="kicker">Projeto Antessala · Documento consolidado</div>
+    <h1>Briefing, ICP, Pesquisa, Validação e MVP</h1>
+    <p class="subtitle">
+      Consolidação atualizada do projeto. A V4 mantém o eixo da V3 (oportunidade subaproveitada, ICP travado em PME com comercial estruturado) e acrescenta as decisões de execução: a Etapa 0 de assimilação do cliente, o CRM como gatilho principal, a arquitetura de coletores com custo unitário verificado, a auditoria das evidências e a política de dados.
+    </p>
+    <div class="meta">
+      <span class="badge">Hackathon ATON</span>
+      <span class="badge">Sales Intelligence Autopilot</span>
+      <span class="badge">Readiness comercial</span>
+      <span class="badge">Arquitetura + custo unitário</span>
+      <span class="badge">Documento de trabalho · V4</span>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="file:///Users/felipemiranda/Downloads/antessala_documento_consolidado_v4.html#tldr">TL;DR</a>
+    <a href="file:///Users/felipemiranda/Downloads/antessala_documento_consolidado_v4.html#desafio">Desafio</a>
+    <a href="file:///Users/felipemiranda/Downloads/antessala_documento_consolidado_v4.html#tese">Tese</a>
+    <a href="file:///Users/felipemiranda/Downloads/antessala_documento_consolidado_v4.html#problema">Problema</a>
+    <a href="file:///Users/felipemiranda/Downloads/antessala_documento_consolidado_v4.html#evidencias">Evidências</a>
+    <a href="file:///Users/felipemiranda/Downloads/antessala_documento_consolidado_v4.html#icp">ICP</a>
+    <a href="file:///Users/felipemiranda/Downloads/antessala_documento_consolidado_v4.html#quem">Quem compra</a>
+    <a href="file:///Users/felipemiranda/Downloads/antessala_documento_consolidado_v4.html#roi">ROI</a>
+    <a href="file:///Users/felipemiranda/Downloads/antessala_documento_consolidado_v4.html#validacao-publica">Validação pública</a>
+    <a href="file:///Users/felipemiranda/Downloads/antessala_documento_consolidado_v4.html#gaps-publicos">Gaps</a>
+    <a href="file:///Users/felipemiranda/Downloads/antessala_documento_consolidado_v4.html#arquitetura">Arquitetura</a>
+    <a href="file:///Users/felipemiranda/Downloads/antessala_documento_consolidado_v4.html#dados">Dados</a>
+    <a href="file:///Users/felipemiranda/Downloads/antessala_documento_consolidado_v4.html#custo">Custo</a>
+    <a href="file:///Users/felipemiranda/Downloads/antessala_documento_consolidado_v4.html#mvp">MVP</a>
+    <a href="file:///Users/felipemiranda/Downloads/antessala_documento_consolidado_v4.html#validacao">Validação</a>
+    <a href="file:///Users/felipemiranda/Downloads/antessala_documento_consolidado_v4.html#riscos">Riscos</a>
+    <a href="file:///Users/felipemiranda/Downloads/antessala_documento_consolidado_v4.html#decisoes">Decisões</a>
+    <a href="file:///Users/felipemiranda/Downloads/antessala_documento_consolidado_v4.html#qa">Q&amp;A</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section id="tldr" class="tldr">
+  <div class="section-label">TL;DR · V4</div>
+  <h2>Registro de decisão atual</h2>
+  <p class="lead">
+    O Antessala é um agente autônomo de readiness comercial para <strong>PMEs com operação comercial estruturada</strong>. O valor principal não é economizar minutos de pesquisa: é reduzir a chance de uma reunião importante começar rasa, genérica ou sem contexto e deixar uma oportunidade escapar sem que o gestor consiga enxergar por quê.
+  </p>
+
+  <div class="decision-grid">
+    <div class="decision">
+      <b>Produto</b>
+      Antessala · Meeting Readiness Agent
+    </div>
+    <div class="decision">
+      <b>Problema central</b>
+      Reuniões de receita rendem menos do que poderiam quando o vendedor entra sem o contexto que muda a conversa. A perda é invisível porque ninguém mede a oportunidade subaproveitada.
+    </div>
+    <div class="decision">
+      <b>ICP travado para o MVP</b>
+      PME com comercial estruturado, algum processo e medição, sem função dedicada de research/RevOps que prepare reuniões e sem stack de sales intelligence implantado.
+    </div>
+    <div class="decision">
+      <b>Faixa de referência</b>
+      Aproximadamente 3 a 15 vendedores, como hipótese de trabalho. O comportamento e a ausência de substituto mandam mais que o headcount.
+    </div>
+    <div class="decision">
+      <b>Usuário</b>
+      AE / closer / executivo de contas / vendedor responsável por reuniões de receita
+    </div>
+    <div class="decision">
+      <b>Comprador econômico</b>
+      Dono, diretor comercial ou Head de Vendas próximo da operação
+    </div>
+    <div class="decision">
+      <b>Gatilho</b>
+      CRM (negócio muda de estágio / reunião agendada) como gatilho principal; calendário como alternativa; dashboard próprio quando não há nenhum dos dois
+    </div>
+    <div class="decision">
+      <b>Entrada</b>
+      Perfil do cliente (Etapa 0) + gatilho do CRM/calendário + contexto interno + dados públicos
+    </div>
+    <div class="decision">
+      <b>Saída</b>
+      Readiness brief entregue automaticamente antes da reunião
+    </div>
+    <div class="decision">
+      <b>Valor principal</b>
+      Melhorar a qualidade e a consistência das reuniões que carregam valor econômico relevante
+    </div>
+    <div class="decision">
+      <b>Valor secundário</b>
+      Horas de pesquisa recuperadas e trabalho manual substituído
+    </div>
+    <div class="decision">
+      <b>ROI</b>
+      Liderar por cenários de negócio subaproveitado e conversão; usar tempo como apoio, sempre com premissas explícitas
+    </div>
+    <div class="decision">
+      <b>Regra de rigor</b>
+      Não afirmar que o Antessala aumenta win rate sem evidência primária
+    </div>
+    <div class="decision">
+      <b>Não construir agora</b>
+      Chatbot, AI SDR completo, CRM, forecast ou plataforma comercial generalista
+    </div>
+  </div>
+
+  <div class="quote">
+    “Seus vendedores estão entrando nas reuniões que mais valem o mês sem o contexto que muda o resultado — e você não vê os negócios que isso custa.”
+  </div>
+</section>
+
+  <section id="desafio">
+    <div class="section-label">1 · Contexto</div>
+    <h2>O desafio recebido</h2>
+    <p>
+      O tema do hackathon é construir um autopilot que pesquise automaticamente uma empresa e seus interlocutores antes de uma reunião e produza um briefing comercial com contexto, oportunidades, sinais e possíveis abordagens.
+    </p>
+    <div class="callout">
+      <strong>Promessa original do tema</strong>
+      Entrar em qualquer reunião sabendo com quem se está falando.
+    </div>
+    <p>
+      A restrição mais importante do evento é de autonomia. O produto deve operar sozinho, de ponta a ponta, sempre que isso for possível. Um chatbot que espera o vendedor pedir algo é uma direção mais fraca para este desafio.
+    </p>
+
+    <h3>Como o projeto será julgado</h3>
+    <table>
+      <thead>
+        <tr><th>Peso</th><th>Critério</th><th>O que precisa ser provado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>20%</strong></td><td>Problema e oportunidade</td><td>Dor real, frequente, relevante e com custo atual</td></tr>
+        <tr><td><strong>20%</strong></td><td>Potencial de negócio</td><td>Cliente claro, disposição plausível a pagar e caminho de monetização</td></tr>
+        <tr><td><strong>25%</strong></td><td>Produto e funcionamento</td><td>Fluxo real de entrada → execução → saída</td></tr>
+        <tr><td><strong>20%</strong></td><td>Autonomia</td><td>Trabalho humano efetivamente substituído</td></tr>
+        <tr><td><strong>15%</strong></td><td>Pitch</td><td>Clareza de problema, solução, funcionamento e negócio</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout warn">
+      <strong>Implicação estratégica</strong>
+      Mais da metade da avaliação depende de direção, mercado e narrativa. Construir rápido a coisa errada continua sendo o maior risco do projeto.
+    </div>
+  </section>
+
+  <section id="tese">
+  <div class="section-label">2 · Tese atualizada · V3</div>
+  <h2>O que estamos realmente tentando evitar</h2>
+
+  <p class="lead">
+    A V3 muda o centro da narrativa. O tempo gasto em pesquisa continua existindo, mas deixa de ser a dor principal. O centro passa a ser a <strong>reunião de receita que começa sem contexto suficiente e rende menos do que poderia</strong>.
+  </p>
+
+  <div class="callout good">
+    <strong>Tese atual</strong>
+    Em PMEs com comercial estruturado, a preparação de reuniões importantes frequentemente não pertence a ninguém: o vendedor pesquisa quando dá, do jeito que sabe. O Antessala assume esse trabalho antes da reunião e entrega contexto acionável para tornar a execução menos rasa e menos dependente da senioridade individual.
+  </div>
+
+  <h3>O que mudou</h3>
+  <table>
+    <thead>
+      <tr><th>Leitura anterior</th><th>V3</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Economia de tempo como argumento principal</td>
+        <td><strong>Oportunidade subaproveitada</strong> como argumento principal; tempo vira benefício secundário</td>
+      </tr>
+      <tr>
+        <td>ICP definido principalmente pela economia do processo</td>
+        <td><strong>PME comercialmente estruturada</strong>, sem substituto dedicado e sem sales intelligence implantado</td>
+      </tr>
+      <tr>
+        <td>Escala comercial como eixo do score</td>
+        <td><strong>Intensidade por negócio + ausência de substituto + fragmentação + maturidade mínima</strong></td>
+      </tr>
+      <tr>
+        <td>“Mais produtividade” como promessa</td>
+        <td>“Cada reunião importante começa com o contexto que muda a conversa”</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <strong>Limite de evidência</strong>
+    <span class="tag confirmed">CONFIRMADO</span> há trabalho manual e fragmentação de contexto.
+    <span class="tag hypothesis">HIPÓTESE</span> reuniões melhor preparadas avançam ou convertem mais.
+    <span class="tag unknown">DESCONHECIDO</span> o tamanho real desse efeito no ICP brasileiro.
+  </div>
+</section>
+
+  <section id="problema">
+  <div class="section-label">3 · Problema · V3</div>
+  <h2>A reunião que rende menos e o negócio que escapa</h2>
+
+  <p class="lead">
+    O eixo do problema não é o tempo que o vendedor gasta. É a reunião de receita que rende menos do que renderia e o negócio que esfria por causa disso, sem deixar rastro.
+  </p>
+
+  <h3>3.1 Operacional</h3>
+  <p>
+    Antes de reuniões de receita, o vendedor precisa reconstruir o contexto do outro lado: quem é a empresa, o que mudou, quem está na mesa e qual a provável dor. Na prática, isso pode virar várias abas abertas poucos minutos antes da call ou simplesmente não ser feito. Não falta ferramenta; falta um trabalho claramente possuído.
+  </p>
+
+  <h3>3.2 Econômico</h3>
+  <p>
+    Como a preparação depende do esforço e da senioridade de cada vendedor, a qualidade de cada reunião é desigual e, na pressa, tende a ficar rasa. O custo relevante não é somente a hora gasta: é a conversa que começa com pergunta genérica, abordagem pouco conectada e leitura incompleta da oportunidade.
+  </p>
+
+  <h3>3.3 Consequência de negócio</h3>
+  <p>
+    A hipótese de mecanismo é que uma reunião mal preparada pode avançar menos, converter menos ou não avançar. Essa perda é difícil de enxergar: ninguém observa diretamente a reunião que teria rendido mais com melhor contexto. Em uma PME, poucos negócios podem representar parte relevante do mês.
+  </p>
+
+  <div class="callout">
+    <strong>Frase-âncora do pitch</strong>
+    Times comerciais de PME perdem oportunidades que poderiam converter porque seus vendedores entram nas reuniões de receita sem o contexto que muda a conversa — e essa perda é invisível, porque ninguém mede a reunião que rendeu menos do que deveria.
+  </div>
+
+  <div class="callout warn">
+    <strong>Rigor obrigatório</strong>
+    <span class="tag hypothesis">HIPÓTESE</span> A relação com win rate e receita ainda exige evidência primária. Apresentar como mecanismo plausível e cenário econômico, nunca como causalidade comprovada.
+  </div>
+
+  <div class="callout risk">
+    <strong>Formulações a evitar</strong>
+    “O problema é a perda de tempo” deixa a dor vitamínica. “O produto aumenta a conversão” promete uma causalidade que ainda não foi demonstrada. O ponto certo é: <strong>preparo raso ou ausente → oportunidade potencialmente subaproveitada → perda invisível</strong>.
+  </div>
+</section>
+
+  <section id="evidencias">
+    <div class="section-label">4 · Pesquisa e evidências</div>
+    <h2>O que já temos sustentado</h2>
+
+    <table>
+      <thead>
+        <tr><th>Sinal</th><th>Leitura atual</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Vendedores gastam tempo em atividades que não são vender</td><td><strong>Força alta</strong></td></tr>
+        <tr><td>Vendedores precisam reconstruir contexto antes de conversas</td><td><strong>Força alta</strong></td></tr>
+        <tr><td>Melhor contexto se associa a melhor resultado comercial</td><td><strong>Força média/alta</strong>, com evidência principalmente observacional</td></tr>
+        <tr><td>Existe orçamento para sales intelligence e produtividade</td><td><strong>Força alta</strong></td></tr>
+        <tr><td>Empresas pagariam por briefing isolado</td><td><strong>Ainda não comprovado</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Dados já levantados</h3>
+    <div class="grid-3">
+      <div class="card">
+        <div class="label">Salesforce 2026</div>
+        <div class="big">34% de redução esperada no tempo de pesquisa de prospects com agentes de IA</div>
+      </div>
+      <div class="card">
+        <div class="label">RD Station 2026</div>
+        <div class="big">52% dos times de Vendas brasileiros não usam histórico/comportamento do lead recebido de Marketing</div>
+      </div>
+      <div class="card">
+        <div class="label">6sense 2025</div>
+        <div class="big">94% dos grupos compradores ordenaram a shortlist por preferência antes de falar com qualquer vendedor — e compram desse favorito em cerca de 80% das vezes</div>
+      </div>
+    </div>
+
+    <h3>Falha de contexto no Brasil</h3>
+    <table>
+      <thead>
+        <tr><th>Indicador</th><th>Resultado levantado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Empresas sem SLA entre Marketing e Vendas</td><td><strong>62%</strong></td></tr>
+        <tr><td>Vendas usa histórico/comportamento do lead recebido</td><td><strong>48%</strong></td></tr>
+        <tr><td>Ferramentas de Marketing e Vendas integradas</td><td><strong>47%</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout warn">
+      <strong>Leitura correta</strong>
+      Esses dados sustentam que há trabalho manual, fragmentação de contexto e orçamento na categoria. Eles não provam que um briefing isolado gera aumento causal de receita.
+    </div>
+
+    
+    <h3>Auditoria de evidências · V4</h3>
+    <p>
+      Nem todo número que circula sobre este tema sobrevive à checagem de fonte primária. A V4 registra o resultado da
+      auditoria para que ninguém leve um dado frágil ao pitch e seja derrubado no Q&amp;A.
+    </p>
+
+    <div class="srcbox">
+      <p style="margin:0 0 6px"><span class="verdict use">USAR</span><strong>6sense · 2025 Buyer Experience Report</strong></p>
+      <p style="margin:0">
+        Mais de 4.000 compradores em América do Norte, EMEA e APAC. A pergunta feita foi direta: se o time conseguiu ordenar
+        a shortlist por preferência antes de engajar vendedores ou SDRs — 94% responderam que sim, e compram do favorito em
+        cerca de 80% dos casos. Reforço decisivo: quando o comprador <em>não</em> havia ranqueado (apenas 6% dos casos), o primeiro
+        fornecedor com quem falou ganhou só 57% das vezes. Se a primeira conversa fosse altamente persuasiva, esse número seria
+        muito maior — ou seja, <strong>o primeiro contato reflete preferência, não persuasão</strong>.
+      </p>
+      <p class="small" style="margin:.5rem 0 0">
+        Fonte primária: <a href="https://6sense.com/science-of-b2b/buyer-experience-report-2025/" target="_blank" rel="noopener">6sense · Buyer Experience Report 2025</a>.
+        Dizer sempre “cerca de 80%” (o relatório aparece com 77% e com “quase 80%” em lugares diferentes).
+        Ressalva honesta: é fornecedor de sales intelligence, com interesse no resultado. Citar como pesquisa do 6sense, não como lei universal.
+      </p>
+    </div>
+
+    <div class="srcbox">
+      <p style="margin:0 0 6px"><span class="verdict drop">NÃO USAR</span><strong>“82% dos decisores B2B acham vendedores despreparados”</strong></p>
+      <p style="margin:0">
+        Sempre atribuído a “Biznology”, nunca a um estudo publicado com metodologia. Circula desde ao menos 2019 em blogs de
+        agência. Alguns sites citam <strong>84%</strong> com a mesma atribuição, e uma das fontes que o repete afirma que a citação é
+        provavelmente inventada. É folclore de marketing.
+      </p>
+    </div>
+
+    <div class="srcbox">
+      <p style="margin:0 0 6px"><span class="verdict drop">NÃO USAR</span><strong>“Preparar 15+ minutos faz fechar 50% mais negócios” (atribuído ao Gong)</strong></p>
+      <p style="margin:0">
+        Não encontrado no material primário do Gong. Aparece em blog de fornecedor. Outro fornecedor cita <strong>34%</strong> de aumento
+        em win rate “segundo análise do Gong de 500 mil calls”. Dois números diferentes, mesma fonte alegada, nenhum rastreável.
+        Se um jurado pedir a fonte, não há.
+      </p>
+    </div>
+
+    <div class="callout risk">
+      <strong>Não existe prova causal publicada entre preparação e conversão</strong>
+      Procuramos e não encontramos estudo rigoroso que demonstre causalidade. Existe evidência observacional adjacente
+      (negócios com múltiplos decisores nas primeiras calls têm win rate maior; times com enablement formal ganham ~49% dos
+      negócios previstos contra ~42,5% sem). Isso sustenta o <em>mecanismo</em>, não o tamanho do efeito.
+      <strong>A ausência dessa prova é a razão de existir do nosso critério de falsificação.</strong>
+    </div>
+
+    <div class="quote">
+      “A literatura mostra correlação entre qualidade da conversa e resultado, e mostra que o comprador chega decidido.
+      O que ninguém provou de forma causal é o tamanho do ganho — e é exatamente isso que estamos medindo.”
+    </div>
+
+    <h3>Substitutos e “gambiarras” atuais</h3>
+    <p>
+      A preparação costuma combinar Google, LinkedIn, CRM, histórico de e-mails, calls, documentos e ChatGPT. Também já existe gasto em plataformas como Sales Navigator, HubSpot, Salesforce e Microsoft.
+    </p>
+    <p>
+      Isso confirma a existência da dor, mas também mostra o risco de commoditização. “Briefing pré-reunião” tende a virar feature. Por isso o produto precisa transformar informação em decisão comercial.
+    </p>
+  </section>
+
+  <section id="icp">
+  <div class="section-label">5 · ICP · V3</div>
+  <h2>PME com comercial estruturado e um trabalho sem dono</h2>
+
+  <div class="callout good">
+    <strong>Definição operacional</strong>
+    PME com operação comercial estruturada: existe um time de vendas e algum processo, mas <strong>sem função dedicada de pesquisa ou pré-venda que já prepare as reuniões</strong> e <strong>sem stack de sales intelligence implantado</strong>. Nem micro com vendedor solo, nem enterprise já coberta por copilots.
+  </div>
+
+  <h3>A lógica dos três cortes</h3>
+  <table>
+    <thead>
+      <tr><th>Corte</th><th>Leitura</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Micro / vendedor solo</strong></td>
+        <td>Dor pode existir, mas tende a faltar orçamento formal e o ganho econômico é mais difícil de monetizar.</td>
+      </tr>
+      <tr>
+        <td><strong>Enterprise</strong></td>
+        <td>É onde copilots de CRM e stacks maduros de sales intelligence já vivem; o risco de commodity é maior.</td>
+      </tr>
+      <tr>
+        <td><strong>PME estruturada</strong></td>
+        <td><strong>O vão-alvo:</strong> comprador e orçamento existem, mas a preparação da reunião ainda pode não ter dono nem ferramenta específica.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Sinais de alto fit</h3>
+  <table>
+    <thead>
+      <tr><th>Sinal</th><th>Por que importa</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Time comercial pequeno-médio, <strong>sem SDR/RevOps de pesquisa</strong></td>
+        <td>Ausência de substituto: a máquina assume um trabalho que hoje ninguém executa de forma consistente.</td>
+      </tr>
+      <tr>
+        <td><strong>Alto valor econômico por reunião ou negócio</strong></td>
+        <td>Cada oportunidade pesa; uma reunião rasa pode ter custo material.</td>
+      </tr>
+      <tr>
+        <td>Ticket e ciclo relevantes, com alguma consultividade</td>
+        <td>Existe contexto suficiente para preparação mudar a qualidade da conversa.</td>
+      </tr>
+      <tr>
+        <td>Contexto fragmentado entre CRM parcial, WhatsApp, e-mail e histórico</td>
+        <td>Há trabalho manual claro para automatizar.</td>
+      </tr>
+      <tr>
+        <td><strong>Nenhuma ferramenta de sales intelligence implantada</strong></td>
+        <td>Reduz sobreposição com copilots já existentes.</td>
+      </tr>
+      <tr>
+        <td>Dono ou diretor comercial próximo do time</td>
+        <td>O comprador sente diretamente o negócio que avança ou morre no mês.</td>
+      </tr>
+      <tr>
+        <td>Processo e medição mínimos</td>
+        <td>A empresa consegue perceber ganho e comparar antes/depois.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Anti-ICP</h3>
+  <ul>
+    <li>Micro / vendedor solo / operação sem time comercial.</li>
+    <li>Enterprise com stack de sales intelligence já consolidado.</li>
+    <li>Operação sem nenhum processo nem medição.</li>
+    <li>Reuniões de baixíssimo valor unitário e altíssimo volume transacional.</li>
+  </ul>
+
+  <div class="callout">
+    <strong>Faixa de referência, não decreto</strong>
+    Algo como <strong>3 a 15 vendedores</strong>, ticket médio-alto e ciclo com alguma consultividade. A definição que manda é comportamental: intensidade por negócio, ausência de substituto, fragmentação e capacidade mínima de medir.
+  </div>
+</section>
+
+  <section id="quem">
+  <div class="section-label">6 · Usuário e comprador</div>
+  <h2>Quem usa e quem sente o negócio no mês</h2>
+
+  <table>
+    <thead>
+      <tr><th>Papel</th><th>Quem</th><th>Motivação</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Usuário</strong></td>
+        <td>AE, closer, executivo de contas, consultor comercial ou vendedor de campo</td>
+        <td>Entrar em reuniões importantes com contexto, riscos, gaps e objetivo claro sem precisar reconstruir tudo sozinho.</td>
+      </tr>
+      <tr>
+        <td><strong>Champion</strong></td>
+        <td>Gerente comercial ou líder de vendas próximo da execução</td>
+        <td>Reduzir variação entre vendedores e tornar a preparação menos dependente dos melhores performers.</td>
+      </tr>
+      <tr>
+        <td><strong>Comprador econômico</strong></td>
+        <td>Dono, Diretor Comercial ou Head de Vendas</td>
+        <td>Evitar oportunidades subaproveitadas, melhorar execução do pipeline e proteger receita relevante do mês.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="quote">
+    A reunião ruim acontece com o vendedor. O negócio que não avança aparece no mês do dono ou diretor comercial.
+  </div>
+</section>
+
+  <section id="roi">
+  <div class="section-label">7 · Narrativa de valor e ROI · V3</div>
+  <h2>Liderar pelo negócio que escapa; sustentar com tempo e cenários</h2>
+
+  <p class="lead">
+    O valor principal do Antessala não deve ser apresentado como “X horas economizadas”. Para uma PME, a narrativa mais forte é a oportunidade relevante que pode ser subaproveitada porque a reunião começou sem contexto.
+  </p>
+
+  <div class="callout good">
+    <strong>Frase de compra</strong>
+    Seus vendedores estão entrando nas reuniões que mais valem o mês sem o contexto que muda o resultado — e você não vê os negócios que isso custa. O Antessala prepara cada reunião de receita sozinho, antes dela acontecer.
+  </div>
+
+  <h3>7.1 Âncora econômica principal</h3>
+  <div class="formula">
+    Exposição econômica potencial = valor médio do negócio × frequência plausível de reuniões mal preparadas
+  </div>
+  <p>
+    Essa fórmula não prova perda de receita. Ela cria uma faixa de exposição para testar se o problema é grande o suficiente para merecer orçamento. O valor médio do negócio e a frequência precisam ser estimados com premissas explícitas.
+  </p>
+
+  <h3>7.2 Cenários de conversão</h3>
+  <div class="formula">
+    Impacto de cenário = volume de oportunidades × variação hipotética de conversão × valor econômico médio por venda
+  </div>
+  <p>
+    Mostrar cenários de <strong>+0,5 p.p., +1 p.p. e +2 p.p.</strong> pode ser útil, desde que a apresentação diga claramente: “se movermos a conversão em X, o impacto seria Y”. Não afirmar que o Antessala produzirá esse ganho sem teste longitudinal.
+  </p>
+
+  <h3>7.3 Tempo como benefício secundário</h3>
+  <div class="formula">
+    Horas recuperadas/mês = vendedores × reuniões/mês × minutos de preparação evitados ÷ 60
+  </div>
+  <p>
+    O tempo continua sendo mensurável e ajuda a provar trabalho substituído e autonomia. Ele deve apoiar a narrativa econômica, não liderá-la.
+  </p>
+
+  <h3>7.4 Métricas para acompanhar depois do MVP</h3>
+  <ul>
+    <li>reunião → próxima etapa;</li>
+    <li>reunião → proposta;</li>
+    <li>dias até proposta;</li>
+    <li>duração do ciclo;</li>
+    <li>win rate;</li>
+    <li>percentual de reuniões com gaps críticos identificados antes da call;</li>
+    <li>tempo de preparação evitado, como métrica operacional secundária.</li>
+  </ul>
+
+  <div class="callout warn">
+    <strong>Regra do pitch</strong>
+    A perda invisível é a manchete. Horas recuperadas são evidência de trabalho substituído. Conversão é cenário até ser provada.
+  </div>
+</section>
+
+
+  <section id="validacao-publica">
+  <div class="section-label">7A · Validação com dados públicos · V3</div>
+  <h2>Como estimar onde a dor pode ficar cara sem dados internos</h2>
+
+  <p class="lead">
+    Dados públicos não permitem provar que uma empresa perdeu um negócio por falta de preparo. Eles permitem <strong>triangular onde esse mecanismo é plausivelmente caro</strong> e selecionar empresas com maior probabilidade de fit.
+  </p>
+
+  <h3>Variáveis públicas prioritárias</h3>
+  <table>
+    <thead>
+      <tr><th>Variável</th><th>Como observar</th><th>Papel no ICP</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Valor econômico por negócio</strong></td>
+        <td>Ticket divulgado, natureza da solução, tamanho dos clientes, contratos e senioridade da venda</td>
+        <td>Eixo principal: quanto uma oportunidade relevante pode pesar no mês</td>
+      </tr>
+      <tr>
+        <td><strong>Ausência de substituto</strong></td>
+        <td>Equipe pública, vagas, presença/ausência de SDR de research, RevOps e ferramentas de sales intelligence</td>
+        <td>Mostra se o Antessala substitui um trabalho realmente sem dono</td>
+      </tr>
+      <tr>
+        <td><strong>Fragmentação de contexto</strong></td>
+        <td>CRM parcial, ERP, WhatsApp, campo, e-mail, múltiplos stakeholders e histórico longo</td>
+        <td>Indica trabalho automatizável</td>
+      </tr>
+      <tr>
+        <td><strong>Maturidade mínima</strong></td>
+        <td>Uso de CRM, funil, acompanhamento de conversão, processo comercial visível</td>
+        <td>Sem medição, o cliente pode não perceber o ganho</td>
+      </tr>
+      <tr>
+        <td><strong>Escala comercial</strong></td>
+        <td>Nº aproximado de vendedores, cobertura regional, contratações</td>
+        <td>Modificador do valor total, não critério principal</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Evidências públicas que continuam úteis</h3>
+  <div class="grid-3">
+    <div class="card">
+      <div class="label">Salesforce · State of Sales 2026</div>
+      <div class="big">Pesquisa comercial consome tempo material; agentes são esperados para reduzir parte desse trabalho.</div>
+    </div>
+    <div class="card">
+      <div class="label">RD Station · 2026</div>
+      <div class="big">Há grande volume de atividade comercial e maturidade operacional desigual entre empresas brasileiras.</div>
+    </div>
+    <div class="card">
+      <div class="label">Uso correto</div>
+      <div class="big">Essas fontes sustentam o mecanismo e o mercado; não provam causalidade entre Antessala e conversão.</div>
+    </div>
+  </div>
+
+  <h3>Cenários, não “verdades” sobre uma empresa</h3>
+  <p>
+    Quando houver estimativa pública de ticket, volume comercial ou tamanho de equipe, o projeto pode montar cenários conservador, base e alto. O pitch deve sempre separar <span class="tag confirmed">DADO PÚBLICO</span> <span class="tag hypothesis">PREMISSA</span> e <span class="tag unknown">NÃO SABEMOS</span>.
+  </p>
+
+  <h3>Tempo continua disponível como prova secundária</h3>
+  <p>
+    Benchmarks de produtividade, remuneração e tempo de pesquisa podem ajudar a quantificar trabalho manual substituído, mas a V3 não usa custo/hora como razão principal para comprar.
+  </p>
+
+  <h3>Fontes públicas já mapeadas</h3>
+  <ul>
+    <li><a href="https://www.salesforce.com/news/stories/state-of-sales-report-announcement-2026/" target="_blank" rel="noopener">Salesforce · State of Sales 2026</a></li>
+    <li><a href="https://www.rdstation.com/blog/marketing/panoramas-marketing-vendas/" target="_blank" rel="noopener">RD Station · Panoramas de Marketing e Vendas 2026</a></li>
+    <li><a href="https://www.rdstation.com/pesquisas/panorama-marketing-vendas/edicao-2026/vendas/maturidade-operacional/" target="_blank" rel="noopener">RD Station · Maturidade Operacional em Vendas 2026</a></li>
+  </ul>
+</section>
+
+  <section id="gaps-publicos">
+  <div class="section-label">7B · Índice de Potencial da Dor · V3</div>
+  <h2>O score precisa apontar para onde o produto ganha</h2>
+
+  <p>
+    O índice anterior liderava por escala comercial e acabava empurrando o ICP artificialmente para operações maiores. Na V3, <strong>escala vira modificador</strong>. O centro passa a ser o valor de cada negócio e a ausência de alguém ou algo que já faça o trabalho.
+  </p>
+
+  <div class="formula">
+    Potencial de fit = intensidade da dor por negócio × ausência de substituto × fragmentação de contexto × maturidade mínima de medição
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Dimensão</th><th>O que mede</th><th>Sinais públicos</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Intensidade por negócio</strong></td>
+        <td>Quanto cada reunião/oportunidade pode valer</td>
+        <td>Ticket, tipo de venda, senioridade dos vendedores, tamanho de conta</td>
+      </tr>
+      <tr>
+        <td><strong>Ausência de substituto</strong></td>
+        <td>Não há SDR/RevOps/copilot fazendo isso hoje</td>
+        <td>Sem função dedicada e sem sales intelligence no stack aparente</td>
+      </tr>
+      <tr>
+        <td><strong>Fragmentação de contexto</strong></td>
+        <td>Informação espalhada e trabalho reconstruído manualmente</td>
+        <td>CRM parcial + WhatsApp + ERP + e-mail + histórico longo</td>
+      </tr>
+      <tr>
+        <td><strong>Maturidade mínima de medição</strong></td>
+        <td>Capacidade de enxergar o ganho</td>
+        <td>Funil estruturado, conversão por etapa, processo minimamente acompanhado</td>
+      </tr>
+      <tr>
+        <td><em>Escala comercial</em></td>
+        <td>Multiplica o valor total, mas <strong>não define fit</strong></td>
+        <td>Nº de vendedores, contratações, cobertura</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout good">
+    <strong>Consequência</strong>
+    Uma PME de 6 vendedores com negócios relevantes, contexto fragmentado e nenhum substituto pode ter fit maior que uma enterprise de 500 pessoas já coberta por copilot.
+  </div>
+
+  <h3>O que dados públicos ainda não resolvem</h3>
+  <table>
+    <thead>
+      <tr><th>Pergunta</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Essa empresa realmente perde negócios por preparo ruim?</td><td><strong>Não provado</strong>; exige evidência primária ou teste</td></tr>
+      <tr><td>Qual é o efeito sobre conversão?</td><td><strong>Não provado</strong>; trabalhar com cenários</td></tr>
+      <tr><td>Quanto pagaria?</td><td><strong>Não resolvido</strong>; validar com comprador econômico</td></tr>
+      <tr><td>Quanto trabalho manual existe?</td><td><strong>Parcialmente modelável</strong> com benchmark; idealmente validar depois</td></tr>
+    </tbody>
+  </table>
+</section>
+
+
+  <section id="arquitetura">
+    <div class="section-label">7C · Arquitetura · V4</div>
+    <h2>O caminho que o Antessala percorre</h2>
+
+    <p class="lead">
+      Uma camada que aprende o negócio do cliente, cinco etapas que rodam a cada reunião e uma regra inegociável no meio.
+    </p>
+
+    <div class="zero-layer">
+      <h3>Etapa 0 · Assimilação do cliente <span class="pill-once">roda uma vez · alimenta tudo</span></h3>
+      <p>
+        Sem esta camada, o produto entrega “tudo o que descobrimos sobre a empresa X” — e isso é um agregador.
+        Com ela, entrega <strong>“por que a empresa X importa para você e como você entra nisso”</strong>.
+        É o que transforma relevância genérica em relevância comercial.
+      </p>
+
+      <table>
+        <thead><tr><th>O que o Antessala aprende</th><th>De onde vem, sem dar trabalho ao cliente</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>O que a PME vende e qual problema resolve; para quem vende (o ICP dela); ticket e ciclo típicos; concorrentes recorrentes; objeções frequentes; <strong>motivos de perda recorrentes</strong>.</td>
+            <td>Site institucional e materiais (o sistema lê sozinho); CRM: negócios ganhos e perdidos, motivos de perda registrados, setores que mais fecham, ticket por perfil; onboarding curto apenas para o que o vendedor sabe e nunca escreveu.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-bottom:0">
+        <strong>É o único momento em que o cliente conversa com o produto.</strong> Depois disso, a interface some.
+        Isso é coerente com a decisão de interface transparente: a tela do Antessala serve para configuração, não para uso diário.
+      </p>
+    </div>
+
+    <div class="callout good">
+      <strong>Por que a Etapa 0 é a resposta ao risco de commoditização</strong>
+      Coleta de dado público qualquer concorrente replica em um fim de semana. O entendimento acumulado do negócio de um
+      cliente específico, cruzado com o histórico dele, não. “Contratou 5 vendedores” é ruído se o cliente vende manutenção
+      industrial e é oportunidade se ele vende CRM — só a Etapa 0 sabe a diferença.
+    </div>
+
+    <h3>Ciclo · roda a cada reunião</h3>
+    <div class="flow9">
+      <div class="stepc zero"><div class="n">0</div><b>Assimilação</b><p>Quem é o cliente e o que ele vende. Persistente.</p></div>
+      <div class="stepc"><div class="n">1</div><b>Gatilho</b><p>CRM ou calendário sinaliza uma reunião de receita. Ninguém pede nada.</p></div>
+      <div class="stepc"><div class="n">2</div><b>Identificação</b><p>Domínio do e-mail → empresa. Nome + empresa → quem está na mesa.</p></div>
+      <div class="stepc"><div class="n">3</div><b>Coleta</b><p>Coletores em paralelo, cada sinal com sua fonte.</p></div>
+      <div class="stepc"><div class="n">4</div><b>Análise</b><p>Cruzamento interno × externo vira decisão comercial.</p></div>
+      <div class="stepc"><div class="n">5</div><b>Entrega</b><p>Brief chega onde o vendedor já está, antes da reunião.</p></div>
+    </div>
+
+    <div class="callout warn">
+      <strong>O portão de confiança — entre a coleta e a análise</strong>
+      Toda afirmação carrega a URL de onde veio. <strong>Sem fonte buscada, não vira fato.</strong> Regra determinística,
+      implementada em código, sem depender do modelo se comportar: qualquer afirmação sem fonte correspondente é rebaixada
+      automaticamente a “desconhecido” e vira pergunta de discovery. É a funcionalidade mais barata e mais valiosa do produto.
+    </div>
+
+    <h3>O que faz um insight, e não um agregado</h3>
+    <table>
+      <thead><tr><th>Interno (CRM) + Externo (público)</th><th>Insight entregue</th></tr></thead>
+      <tbody>
+        <tr><td>Negócio parado há 45 dias + notícia de nova rodada</td><td>Momento de reativar: o orçamento mudou</td></tr>
+        <tr><td>Proposta enviada + 5 vagas de vendedor abertas</td><td>A dor que o cliente endereça acabou de crescer</td></tr>
+        <tr><td>Contato trocou de cargo + negócio em aberto</td><td>Risco: o champion mudou, revalidar</td></tr>
+        <tr><td>Motivo de perda recorrente + este negócio</td><td>Objeção provável nesta call</td></tr>
+      </tbody>
+    </table>
+    <p class="small">
+      Nenhum desses é obtenível com pesquisa de empresa pura. É o cruzamento com o contexto interno e com a Etapa 0 que
+      responde ao risco “briefing vira commodity”.
+    </p>
+
+    <div class="callout">
+      <strong>↺ O ciclo realimenta a Etapa 0</strong>
+      Cada negócio ganho ou perdido volta para o perfil do cliente. O Antessala aprende quais sinais realmente antecedem
+      uma venda naquele negócio específico. <span class="tag hypothesis">HIPÓTESE</span> ainda não implementado nem validado.
+    </div>
+  </section>
+
+  <section id="dados">
+    <div class="section-label">7D · Dados e coletores · V4</div>
+    <h2>De onde vem cada sinal — e o que declaradamente não fazemos</h2>
+
+    <p class="lead">
+      Ferramentas como Tavily, Serper e Firecrawl <strong>não são bancos de dados</strong>: são camadas sobre um índice de
+      busca que devolvem texto limpo. Não existe “conector do Reclame Aqui” nem base de vagas. Acessamos o que é público e
+      indexado — e é assim que a afirmação deve ser feita diante da banca.
+    </p>
+
+    <table>
+      <thead><tr><th>Coletor</th><th>Fonte</th><th>Custo</th><th>Prioridade</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Cadastral</strong></td>
+          <td>BrasilAPI / ReceitaWS — CNPJ, CNAE, porte, capital social, abertura, quadro societário, filiais</td>
+          <td>R$ 0</td>
+          <td><strong>P0</strong> — diferencial local; um time estrangeiro não teria isso</td>
+        </tr>
+        <tr>
+          <td><strong>Vagas abertas</strong></td>
+          <td>Gupy, Vagas.com, Indeed, InfoJobs, páginas de carreira — via busca</td>
+          <td>Busca</td>
+          <td><strong>P0</strong> — melhor proxy gratuito de intenção e de stack</td>
+        </tr>
+        <tr>
+          <td><strong>Notícias e movimento</strong></td>
+          <td>Portais setoriais, releases, rodadas, contratos, troca de liderança</td>
+          <td>Busca</td>
+          <td><strong>P0</strong> — melhor gancho de abertura</td>
+        </tr>
+        <tr>
+          <td><strong>Site institucional</strong></td>
+          <td>Fetch direto ou Firecrawl (extração de site inteiro em markdown)</td>
+          <td>Busca / Firecrawl</td>
+          <td>P1 — alimenta também a Etapa 0</td>
+        </tr>
+        <tr>
+          <td><strong>Contexto interno</strong></td>
+          <td>CRM: estágio, dias parado, valor, histórico, motivo de perda</td>
+          <td>Integração</td>
+          <td><strong>P0 quando há CRM</strong> — é o que os concorrentes genéricos não têm</td>
+        </tr>
+        <tr>
+          <td><strong>Pessoas</strong></td>
+          <td>Conteúdo profissional público e indexado: perfil indexado, entrevistas, palestras, artigos assinados</td>
+          <td>Busca</td>
+          <td>P2 — <strong>coletor sacrificável</strong>, o mais irregular</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Por que “pessoas” é e continuará sendo o coletor mais fraco</h3>
+    <p>
+      Não é escolha nossa: o ecossistema fechou. Desde 2015 todo acesso à API do LinkedIn passa pelo Partner Program, e os
+      programas existentes são verticais (Marketing, Talent, Sales Navigator, Learning) — <strong>não existe uma “API de dados”</strong>.
+      Casos de uso de extração são rotineiramente negados. O Indeed encerrou sua API em 2021 e o Glassdoor encerrou a API de
+      parceiros em 2023. A API não oficial (Voyager) derruba a conta em dias.
+    </p>
+    <div class="callout good">
+      <strong>Leitura estratégica</strong>
+      Isso não é desvantagem nossa: é condição de mercado. Nenhum concorrente tem esse dado facilmente também.
+      A resposta correta na banca é: “o LinkedIn não licencia esse dado para o nosso caso de uso — nem para nós nem para ninguém.”
+    </div>
+
+    <div class="callout risk">
+      <strong>Política de dados — restrição que vira argumento</strong>
+      Usamos apenas informação profissional pública e citamos a fonte de cada afirmação.
+      <strong>Não raspamos redes sociais nem construímos perfis pessoais.</strong>
+      Isso nos blinda da pergunta de LGPD (dado pessoal segue protegido mesmo quando publicamente acessível),
+      evita violação de termos de uso, elimina uma dependência técnica que quebraria sozinha — e reforça o trust layer
+      que já é o coração do produto. Instagram e TikTok são irrelevantes para contexto comercial B2B e ficam fora por decisão, não por limitação.
+    </div>
+
+    <h3>Limite honesto</h3>
+    <p>
+      Nem toda PME tem conteúdo público. Empresa de 6 vendedores frequentemente não tem notícia, não tem vaga aberta e tem
+      site de 2019. É exatamente por isso que a regra “sem fonte → desconhecido → vira pergunta de discovery” é arquitetura,
+      não firula: ela transforma ausência de dado em entregável em vez de alucinação.
+    </p>
+  </section>
+
+  <section id="custo">
+    <div class="section-label">7E · Economia unitária · V4</div>
+    <h2>Quanto custa produzir um brief</h2>
+
+    <table>
+      <thead><tr><th>Componente</th><th>Referência de preço</th><th>Custo por brief</th></tr></thead>
+      <tbody>
+        <tr><td>Busca web (Tavily)</td><td>Busca básica 1 crédito, avançada 2; PAYG US$ 0,008/crédito; ~US$ 0,005 em volume; 1.000 créditos/mês grátis</td><td>US$ 0,05 – 0,08</td></tr>
+        <tr><td>Síntese (Claude API)</td><td>Haiku 4.5 US$ 1/US$ 5 por MTok; Sonnet 5 US$ 2/US$ 10. Batch −50%; cache de prompt −90% na entrada cacheada</td><td>US$ 0,025 – 0,05</td></tr>
+        <tr><td>Cadastral (BrasilAPI / ReceitaWS)</td><td>Gratuito</td><td>R$ 0</td></tr>
+        <tr><td><strong>Total</strong></td><td>—</td><td><strong>US$ 0,08 – 0,15 · R$ 0,40 – 0,80</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="cost">
+      <div class="big">PME com 6 vendedores × 20 reuniões/mês = 120 briefs</div>
+      <p style="margin:.5rem 0 0">
+        Custo variável: <strong>R$ 50 – 100/mês</strong>.
+        Assinatura hipotética de R$ 500 – 800/mês → <strong>margem bruta ~85–90%</strong>.
+      </p>
+      <p class="small" style="margin-bottom:0">
+        Preços verificados em agosto de 2026. O prompt de sistema é fixo e extenso, o que torna o cache de prompt
+        especialmente eficaz. Preço de venda permanece <span class="tag hypothesis">HIPÓTESE</span> até validação com comprador econômico.
+      </p>
+    </div>
+
+    <div class="callout good">
+      <strong>Por que isso importa no pitch</strong>
+      Margem de SaaS saudável, sustentada por números verificáveis e não por estimativa. É também a resposta pronta
+      para “por que não construíram ainda?”: provamos primeiro que a economia fecha e que os dados existem.
+    </div>
+  </section>
+
+  <section id="mvp">
+    <div class="section-label">8 · MVP</div>
+    <h2>O produto que vale construir em 10 horas</h2>
+
+    <div class="callout good">
+      <strong>Promessa do MVP</strong>
+      Antes de cada reunião importante, o Antessala diz automaticamente ao vendedor o que ele já deveria saber, o que ainda precisa descobrir e qual avanço aquela conversa precisa produzir.
+    </div>
+
+    <h3>Fluxo</h3>
+    <div class="flow">
+      <div class="step"><div class="n">1</div><strong>Gatilho</strong><p>CRM (estágio/reunião) ou calendário sinaliza uma reunião de receita. Ninguém pede nada.</p></div>
+      <div class="step"><div class="n">2</div><strong>Identificação</strong><p>Reconhece empresa e participantes.</p></div>
+      <div class="step"><div class="n">3</div><strong>Contexto interno</strong><p>Busca oportunidade, histórico e notas.</p></div>
+      <div class="step"><div class="n">4</div><strong>Pesquisa externa</strong><p>Pesquisa empresa, interlocutores e sinais recentes.</p></div>
+      <div class="step"><div class="n">5</div><strong>Consolidação</strong><p>Organiza informações e remove redundância.</p></div>
+      <div class="step"><div class="n">6</div><strong>Análise</strong><p>Identifica gaps, riscos, hipóteses e perguntas.</p></div>
+      <div class="step"><div class="n">7</div><strong>Objetivo</strong><p>Define qual avanço faz sentido buscar.</p></div>
+      <div class="step"><div class="n">8</div><strong>Entrega</strong><p>Envia o readiness brief automaticamente.</p></div>
+    </div>
+
+    <div class="quote">
+      Perfil do cliente → gatilho → contexto → decisão → entrega
+    </div>
+
+    <h3>Saída do readiness brief</h3>
+    <table>
+      <thead>
+        <tr><th>Bloco</th><th>Conteúdo</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Why now</strong></td><td>Por que essa reunião existe e qual o contexto da oportunidade</td></tr>
+        <tr><td><strong>O que sabemos</strong></td><td>Conta, interlocutor, histórico e necessidade conhecida</td></tr>
+        <tr><td><strong>O que mudou</strong></td><td>Notícias, expansão, funding, mudanças de liderança ou outros sinais</td></tr>
+        <tr><td><strong>Quem está na mesa</strong></td><td>Participantes e papel provável na decisão</td></tr>
+        <tr><td><strong>O que falta</strong></td><td>Gaps de qualificação</td></tr>
+        <tr><td><strong>Riscos</strong></td><td>Decisor ausente, concorrentes, objeções, timing e outros sinais</td></tr>
+        <tr><td><strong>Perguntas críticas</strong></td><td>Perguntas derivadas dos gaps reais</td></tr>
+        <tr><td><strong>Resultado esperado</strong></td><td>O avanço que a reunião precisa produzir</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Regra de confiança</h3>
+    <p>
+      <span class="tag confirmed">CONFIRMADO</span>
+      <span class="tag hypothesis">HIPÓTESE</span>
+      <span class="tag unknown">DESCONHECIDO</span>
+    </p>
+    <p class="small">
+      Fatos precisam de fonte. Hipóteses precisam de justificativa. Desconhecidos viram perguntas de discovery.
+    </p>
+
+    <h3>Fronteira humano × máquina</h3>
+    <table>
+      <thead><tr><th>Atividade</th><th>Antessala</th><th>Humano</th></tr></thead>
+      <tbody>
+        <tr><td>Detectar reunião</td><td class="check">✓</td><td></td></tr>
+        <tr><td>Pesquisar conta e participantes</td><td class="check">✓</td><td></td></tr>
+        <tr><td>Buscar histórico</td><td class="check">✓</td><td></td></tr>
+        <tr><td>Consolidar contexto</td><td class="check">✓</td><td></td></tr>
+        <tr><td>Identificar gaps e riscos</td><td class="check">✓</td><td></td></tr>
+        <tr><td>Criar hipóteses e sugerir perguntas</td><td class="check">✓</td><td></td></tr>
+        <tr><td>Definir objetivo provável</td><td class="check">✓</td><td></td></tr>
+        <tr><td>Confirmar dor, orçamento, urgência e política interna</td><td></td><td class="check">✓</td></tr>
+        <tr><td>Conduzir negociação</td><td></td><td class="check">✓</td></tr>
+        <tr><td>Tomar decisão comercial</td><td></td><td class="check">✓</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="validacao">
+    <div class="section-label">9 · Validação</div>
+    <h2>O que ainda precisa ser provado</h2>
+
+    <p>
+      A pesquisa sustenta a existência da categoria e do trabalho manual. Ainda faltam provas primárias sobre frequência, custo, impacto e disposição a pagar.
+    </p>
+
+    <h3>9.1 Com usuários</h3>
+    <ul>
+      <li>Quanto tempo gastam antes de reuniões relevantes?</li>
+      <li>Quais sistemas, abas e pessoas consultam?</li>
+      <li>O que costuma faltar?</li>
+      <li>Que trabalho o melhor vendedor faz que os demais não fazem?</li>
+      <li>Que parte desse trabalho poderia desaparecer sem perda de qualidade?</li>
+    </ul>
+
+    <h3>9.2 Com compradores</h3>
+    <ul>
+      <li>Qual número do time mudaria se esse trabalho fosse eliminado?</li>
+      <li>Quanto custa hoje a preparação manual do time?</li>
+      <li>Quanto vale uma hora comercial recuperada?</li>
+      <li>Qual etapa do funil é mais sensível à qualidade das reuniões?</li>
+      <li>Existe orçamento para produtividade, enablement, RevOps ou sales intelligence?</li>
+      <li>O que precisaria ser provado para justificar uma assinatura mensal?</li>
+    </ul>
+
+    <h3>9.3 Pergunta de descoberta central</h3>
+    <div class="quote">
+      “Como seu melhor vendedor se prepara hoje para uma reunião importante, e o que ele faz que os demais não fazem?”
+    </div>
+
+    <h3>9.4 Critério de falsificação</h3>
+    <div class="callout risk">
+      <strong>A tese deve ser revista se:</strong>
+      entrevistas não mostrarem trabalho manual recorrente, não houver perda concreta de contexto, o custo mensal for irrelevante, ou gestores não associarem o problema a nenhuma métrica pela qual aceitem pagar.
+    </div>
+
+    <h3>9.5 Meta prática para o hackathon</h3>
+    <p>
+      Buscar pelo menos <strong>3 usuários + 2 compradores econômicos</strong>. Isso não valida estatisticamente o mercado, mas produz evidência comportamental e comercial muito mais forte do que entrevistar apenas usuários.
+    </p>
+  </section>
+
+  <section>
+  <div class="section-label">10 · Métricas do MVP · V3</div>
+  <h2>Como medir sem prometer causalidade</h2>
+
+  <table>
+    <thead><tr><th>Métrica</th><th>Uso</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td><strong>% de briefs entregues automaticamente</strong></td><td>Prova autonomia</td><td>Mensurável no MVP</td></tr>
+      <tr><td><strong>% de fatos com fonte</strong></td><td>Confiança</td><td>Mensurável no MVP</td></tr>
+      <tr><td><strong>% de briefings considerados úteis</strong></td><td>Valor percebido</td><td>Mensurável rapidamente</td></tr>
+      <tr><td><strong>Gaps críticos identificados antes da reunião</strong></td><td>Qualidade do readiness</td><td>Mensurável no MVP</td></tr>
+      <tr><td>Minutos de preparação evitados</td><td>Benefício operacional secundário</td><td>Estimável / mensurável</td></tr>
+      <tr><td>Reunião → próxima etapa</td><td>Impacto comercial</td><td>Validar depois</td></tr>
+      <tr><td>Dias até proposta</td><td>Velocidade</td><td>Validar depois</td></tr>
+      <tr><td>Win rate</td><td>Resultado final</td><td>Não atribuir causalidade no hackathon</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <strong>Leitura correta</strong>
+    O MVP consegue provar automação, qualidade da saída e trabalho substituído. Impacto em avanço e conversão continua sendo hipótese a testar.
+  </div>
+</section>
+
+  <section>
+  <div class="section-label">11 · Modelo de negócio · V3</div>
+  <h2>Por que uma PME pagaria</h2>
+
+  <p>
+    A hipótese continua sendo <strong>B2B SaaS por assinatura mensal</strong>, mas o racional de compra muda. O preço não deve ser comparado apenas com o custo de horas de pesquisa; deve ser comparado com o valor econômico das oportunidades que o time tenta avançar e com o custo de continuar deixando a preparação sem dono.
+  </p>
+
+  <ul>
+    <li>Não vender relatório avulso como categoria principal.</li>
+    <li>Não depender de compra individual do closer.</li>
+    <li>Priorizar dono, Diretor Comercial ou Head de Vendas em PME estruturada.</li>
+    <li>Preço permanece hipótese até validação com comprador econômico.</li>
+    <li>Horas recuperadas podem sustentar ROI, mas não liderar a compra.</li>
+  </ul>
+
+  <div class="callout">
+    <strong>Racional de compra</strong>
+    “Quanto custa deixar as reuniões que mais importam dependerem do preparo individual de cada vendedor?” O Antessala precisa custar pouco diante do valor econômico de um único negócio relevante, sem alegar que necessariamente salvará esse negócio.
+  </div>
+</section>
+
+  <section id="riscos">
+  <div class="section-label">12 · Riscos e pontos em aberto · V3</div>
+  <h2>O que ainda pode derrubar a tese</h2>
+
+  <table>
+    <thead><tr><th>Risco</th><th>Leitura</th><th>Resposta</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Briefing virar commodity</td>
+        <td>Alto</td>
+        <td>PME sem stack + readiness + workflow autônomo, não “texto gerado por IA”</td>
+      </tr>
+      <tr>
+        <td>CRM + ChatGPT ser bom o bastante</td>
+        <td>Alto</td>
+        <td>Provar que o valor está no trabalho ocorrer sozinho, no momento certo e com contexto persistente</td>
+      </tr>
+      <tr>
+        <td>Preparo não mover resultado comercial</td>
+        <td>Não comprovado</td>
+        <td>Não prometer conversão; validar mecanismo e medir avanço de pipeline depois</td>
+      </tr>
+      <tr>
+        <td>PME não perceber urgência</td>
+        <td>Crítico</td>
+        <td>Priorizar negócios de alto valor por reunião e comprador próximo do time</td>
+      </tr>
+      <tr>
+        <td>Empresa já ter substituto</td>
+        <td>Crítico para fit</td>
+        <td>Excluir operações com sales intelligence/copilot já implantado</td>
+      </tr>
+      <tr>
+        <td>Empresa ser imatura demais para medir</td>
+        <td>Alto</td>
+        <td>Exigir processo e medição mínimos como condição de ICP</td>
+      </tr>
+      <tr>
+        <td>Fatos errados ou alucinação</td>
+        <td>Crítico</td>
+        <td>Fonte obrigatória e separação entre confirmado, hipótese e desconhecido</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+  <section id="decisoes">
+  <div class="section-label">13 · Evolução das decisões · V3</div>
+  <h2>O que foi aprendido até agora</h2>
+
+  <ol>
+    <li><strong>A dor operacional existe.</strong> Há pesquisa manual e contexto comercial fragmentado.</li>
+    <li><strong>Briefing isolado é frágil como categoria.</strong> CRMs e copilots já incorporam account intelligence.</li>
+    <li><strong>O produto subiu para readiness comercial.</strong> Precisa dizer o que falta descobrir e qual avanço buscar.</li>
+    <li><strong>Usuário e comprador foram separados.</strong> O vendedor usa; o dono/líder comercial decide orçamento.</li>
+    <li><strong>“Venda consultiva” deixou de definir o ICP.</strong> Ela é apenas um sinal de que contexto pode importar.</li>
+    <li><strong>Escala deixou de ser o eixo principal.</strong> Muitas cabeças não significam fit se já existe copilot ou função dedicada.</li>
+    <li><strong>O ICP foi travado em PME com comercial estruturado.</strong> Há processo e orçamento, mas a preparação ainda pode não ter dono.</li>
+    <li><strong>A narrativa econômica mudou.</strong> Horas recuperadas viraram benefício secundário; o centro é a oportunidade relevante subaproveitada.</li>
+    <li><strong>A causalidade continua protegida.</strong> Conversão e win rate são hipóteses, não promessas.</li>
+    <li><strong>O MVP continua estreito.</strong> Reunião aparece, o sistema trabalha sozinho e entrega readiness antes da conversa.</li>
+  </ol>
+
+  <div class="quote">
+    “Onde existe um negócio importante, contexto fragmentado e ninguém responsável por preparar a reunião?”
+  </div>
+</section>
+
+  <section>
+  <div class="section-label">14 · Prioridades das próximas 10 horas</div>
+  <h2>O que precisa acontecer agora</h2>
+
+  <table>
+    <thead><tr><th>Prioridade</th><th>Resultado esperado</th></tr></thead>
+    <tbody>
+      <tr><td><strong>1. Provar o mecanismo</strong></td><td>Mostrar que contexto fragmentado gera preparo raso ou ausente antes de reuniões relevantes</td></tr>
+      <tr><td><strong>2. Testar o ICP PME</strong></td><td>Encontrar empresas com alto valor por negócio, sem substituto e com medição mínima</td></tr>
+      <tr><td><strong>3. Construir fluxo autônomo</strong></td><td>Calendário → pesquisa → análise → entrega</td></tr>
+      <tr><td><strong>4. Modelar ROI com rigor</strong></td><td>Cenários por valor do negócio e conversão; tempo apenas como apoio</td></tr>
+      <tr><td><strong>5. Fechar apresentação</strong></td><td>Problema invisível → ICP → por que agora → produto → demo → cenário econômico → próximos testes</td></tr>
+    </tbody>
+  </table>
+</section>
+
+
+  <section id="qa">
+    <div class="section-label">15 · Q&amp;A · V4</div>
+    <h2>As perguntas que derrubam — e as respostas decoradas</h2>
+
+    <p class="lead">
+      Estas respostas precisam estar <strong>decoradas, não lidas</strong>. São elas que separam um time que investigou
+      de um time que improvisou.
+    </p>
+
+    <div class="qa-item">
+      <div class="q">“Por que não construíram?”</div>
+      <p class="a">Provamos primeiro que a economia fecha e que os dados existem. Custo por brief: R$ 0,40, com margem de ~88%. Escolhemos validar a viabilidade antes de escrever código.</p>
+    </div>
+
+    <div class="qa-item">
+      <div class="q">“E se o ChatGPT fizer isso?”</div>
+      <p class="a">O ChatGPT espera você pedir. O Antessala dispara sozinho pelo CRM e entrega com fonte. Não é conselho sob demanda, é trabalho executado. E ele conhece o seu negócio — sabe o que você vende, para quem e por que você perde.</p>
+    </div>
+
+    <div class="qa-item">
+      <div class="q">“Preparação aumenta conversão?”</div>
+      <p class="a">Não existe prova causal publicada, e não vamos afirmar que existe. O que existe é que o comprador chega decidido. É exatamente esse efeito que estamos medindo.</p>
+    </div>
+
+    <div class="qa-item">
+      <div class="q">“Alguém paga mesmo?”</div>
+      <p class="a">Na PME, quem sente a dor é quem assina — o dono ou diretor comercial senta à mesma mesa do vendedor. É a nossa principal incógnita e vamos validar com compradores econômicos, cruzando o custo da dor contra o que já gastam em stack comercial.</p>
+    </div>
+
+    <div class="qa-item">
+      <div class="q">“Entregar um relatório não é executar — vocês aconselham, só que sem pedir.”</div>
+      <p class="a">O serviço que executamos não é a venda, é a preparação — e essa fazemos de ponta a ponta, sozinhos, substituindo um trabalho humano real. A máquina prepara; o humano decide e negocia. A fronteira é deliberada: um agente que decidisse o que propor ou falasse com o cliente seria arriscado e perderia a confiança do vendedor.</p>
+    </div>
+
+    <div class="qa-item">
+      <div class="q">“E o LinkedIn? Vocês têm acesso ao Reclame Aqui?”</div>
+      <p class="a">O LinkedIn não licencia esse dado para o nosso caso de uso — nem para nós nem para ninguém; extração de dados é rotineiramente negada no Partner Program. Acessamos o que é público e indexado, e citamos a fonte. Não temos base proprietária de ninguém e não raspamos redes sociais.</p>
+    </div>
+
+    <div class="callout warn">
+      <strong>Regra de sobrevivência no Q&amp;A</strong>
+      Dos quatro números que examinamos nesta pesquisa, dois eram folclore e um só sobreviveu com fonte primária.
+      Responder “6sense, Buyer Experience Report 2025, mais de 4.000 compradores” sem hesitar vale mais do que ter três
+      estatísticas impressionantes e nenhuma defensável.
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Fontes internas</div>
+    <h2>Documentos consolidados neste material</h2>
+    <ul>
+      <li><strong>Briefing · Projeto Antessala</strong>: escopo do tema, critérios do hackathon, restrições e tese de autonomia.</li>
+      <li><strong>ICP · Readiness Comercial</strong>: hipótese inicial de ICP, verticais candidatas, papéis de usuário/champion/comprador e métricas.</li>
+      <li><strong>Pesquisa de Validação · Projeto Antessala</strong>: evidências de dor, dados de mercado, análise de closer/SDR, direção de produto e critérios de falsificação.</li>
+      <li><strong>MVP · Registro de decisão</strong>: fluxo, saída, fronteira humano/máquina, métricas e não-escopo.</li>
+      <li><strong>Reescrita · Problema, ICP e Narrativa de Valor</strong>: decisão V3 que move o eixo de horas recuperadas para negócio subaproveitado e trava o ICP em PME com comercial estruturado.</li>
+      <li><strong>Feedback do júri</strong>: mudança do eixo de segmentação para impacto econômico do processo comercial.</li>
+    </ul>
+
+    <div class="footnote">
+      Observação: faixas de equipe, verticais, preço, impacto causal em conversão e disposição a pagar permanecem hipóteses até validação primária.
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  Projeto Antessala · Documento consolidado V4 · 30 ago 2026
+</footer>
+
+
+</body></html>
