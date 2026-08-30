@@ -1,0 +1,130 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Antessala · Interface e output entregue ao cliente</title>
+<style>
+body{font-family:-apple-system,Helvetica,Arial,sans-serif;background:#f3f4f6;color:#111;margin:0;padding:24px}
+h1{font-size:20px;margin:0 0 4px}.sub{color:#555;font-size:13px;margin-bottom:18px}
+.row{display:grid;grid-template-columns:1fr 1.25fr;gap:18px;align-items:start}
+.panel{background:#fff;border:1px solid #d8dbe0;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.panel h2{font-size:12px;letter-spacing:.4px;text-transform:uppercase;color:#666;margin:0;padding:10px 14px;border-bottom:1px solid #e5e7eb;background:#fafafa}
+.panel .why{font-size:11.5px;color:#444;padding:8px 14px;background:#fffbea;border-bottom:1px solid #f1e6a8}
+/* calendário */
+.cal{padding:12px 14px}
+.cal .day{display:grid;grid-template-columns:52px 1fr;font-size:12px}
+.cal .hour{color:#777;padding:6px 0;border-top:1px solid #eee;height:42px}
+.cal .slot{border-top:1px solid #eee;position:relative;height:42px}
+.ev{position:absolute;left:4px;right:4px;border-radius:6px;padding:5px 8px;font-size:12px;line-height:1.25}
+.ev.meet{background:#dbeafe;border-left:4px solid #2563eb}
+.ev.brief{background:#dcfce7;border-left:4px solid #16a34a}
+.ev small{display:block;color:#333;font-size:11px}
+.lock{font-size:10.5px;color:#166534;margin-top:3px}
+.dayhead{font-weight:700;font-size:13px;margin:6px 0 4px}
+/* e-mail */
+.mail{padding:0}
+.mailhead{padding:12px 16px;border-bottom:1px solid #e5e7eb;font-size:12.5px;line-height:1.5}
+.mailhead b{font-size:14px}
+.mailbody{padding:14px 16px;font-size:12.5px;line-height:1.45}
+.tldr{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:10px 12px;margin-bottom:12px}
+.tldr li{margin:3px 0}
+.blk{margin:10px 0 0}.blk h3{font-size:12.5px;margin:0 0 3px}.blk h3 span{font-weight:400;color:#666;font-size:11px}
+.tag{display:inline-block;font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px;margin-right:5px;vertical-align:middle}
+.c{background:#d8f0dc;color:#125c26}.h{background:#fff0c2;color:#6b4d00}.d{background:#e8e8e8;color:#444}
+.blk li{margin:3px 0;list-style:none}.blk ul{padding:0;margin:0}
+.src{color:#1a56b0;font-size:11px}.fix{color:#999;font-size:11px;margin-left:6px;cursor:pointer}
+.more{margin-top:8px;font-size:12px}.more a{color:#1a56b0}
+.foot{border-top:1px solid #e5e7eb;padding:12px 16px;font-size:12px;background:#fafafa}
+.btn{display:inline-block;border:1px solid #cbd5e1;border-radius:6px;padding:4px 10px;margin:4px 6px 4px 0;background:#fff;font-size:12px}
+.after{margin-top:8px;color:#555}
+/* gestor */
+.gest{padding:14px 16px;font-size:12.5px}
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:10px 0}
+.kpi div{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:10px;text-align:center}
+.kpi b{display:block;font-size:20px}.kpi span{font-size:11px;color:#555}
+.note{font-size:11px;color:#777;margin-top:8px}
+.strip{margin-top:18px;background:#111;color:#eee;border-radius:10px;padding:12px 16px;font-size:12.5px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.strip b{display:block;color:#fff;margin-bottom:3px}
+</style></head><body>
+<h1>Antessala · o que o cliente recebe</h1>
+<div class="sub">Não há tela de uso diário. O vendedor conecta o Google Calendar uma vez; o gestor preenche 6 campos. Depois disso, o produto aparece só onde o vendedor já está. <i>(Decisões de 29/08: D1 canal · D2 onboarding · D3 feedback · 9 superfície do gestor.)</i></div>
+
+<div class="row">
+<div>
+ <div class="panel">
+  <h2>1 · Onde chega — calendário do vendedor</h2>
+  <div class="why">Evento-espelho <b>privado</b>, criado pelo Antessala no <b>dia útil anterior, às 18h</b> (R2, R3). Nunca escreve em evento com convidado externo (R4/segurança).</div>
+  <div class="cal">
+   <div class="dayhead">Segunda, 31 ago</div>
+   <div class="day"><div class="hour">17:00</div><div class="slot"></div></div>
+   <div class="day"><div class="hour">18:00</div><div class="slot"><div class="ev brief">📋 Brief pronto · Fórmula Distribuidora — Paulo Brenha<small>reunião amanhã 10:00 · 24 fontes · 13 confirmados · 12 perguntas · <u>abrir brief</u></small><div class="lock">🔒 privado — só você vê</div></div></div></div>
+   <div class="day"><div class="hour">19:00</div><div class="slot"></div></div>
+   <div class="dayhead" style="margin-top:14px">Terça, 1 set</div>
+   <div class="day"><div class="hour">09:00</div><div class="slot"></div></div>
+   <div class="day"><div class="hour">10:00</div><div class="slot"><div class="ev meet">Reunião · Fórmula Distribuidora × Empresa X<small>convidados: paulo.brenha@formuladistribuidora.com.br · você</small></div></div></div>
+   <div class="day"><div class="hour">11:00</div><div class="slot"></div></div>
+   <div class="day"><div class="hour">12:00</div><div class="slot"><div class="ev brief" style="background:#f1f5f9;border-left-color:#94a3b8">💬 2h depois: “A reunião avançou?” <small>Avançou · Ficou igual · Não avançou (D3)</small></div></div></div>
+  </div>
+ </div>
+
+ <div class="panel" style="margin-top:18px">
+  <h2>3 · Superfície do gestor — e-mail mensal, agregado</h2>
+  <div class="why">Sem briefs individuais, sem métrica por vendedor, sem win rate (decisão 9, R7, R8). Leitura descritiva, nunca causal (V3 §10). <b>Números abaixo são ilustrativos.</b></div>
+  <div class="gest">
+   <b>Setembro · time comercial da Empresa X</b>
+   <div class="kpi">
+    <div><b>42</b><span>briefs entregues sozinhos</span></div>
+    <div><b>96%</b><span>dos fatos com fonte</span></div>
+    <div><b>71%</b><span>marcados “útil”</span></div>
+    <div><b>18</b><span>gaps críticos antes da reunião</span></div>
+   </div>
+   Reuniões com brief que o vendedor marcou como “avançou”: <b>23 de 42</b> — descritivo; não atribuímos causalidade.
+   <div class="note">Por vendedor: só com opt-in visível ao próprio vendedor (R7).</div>
+  </div>
+ </div>
+</div>
+
+<div class="panel mail">
+ <h2>2 · O output — e-mail com o readiness brief</h2>
+ <div class="mailhead"><b>Brief · Fórmula Distribuidora — Paulo Brenha · terça 01/09, 10h</b><br>
+ De: Antessala &lt;brief@antessala.app&gt; · Para: você · seg 31/08, 18:00</div>
+ <div class="mailbody">
+  <div class="tldr"><b>Em 20 segundos</b>
+   <ul style="padding-left:16px;margin:4px 0 0">
+    <li><b>Oportunidade:</b> a Fórmula tem portfólio multimarca e 13 mil PDVs, mas <b>quase não expõe aditivos</b> — a Tirreno é citada uma vez no site e não tem página. Acabou de bater <i>“141% da meta de lançamentos”</i>.</li>
+    <li><b>Risco nº 1:</b> a Tirreno é <b>Moove/Cosan</b> — aditivo de radiador, freio, descarbonizante. Concorrente direto já dentro da casa.</li>
+    <li><b>Pergunta nº 1:</b> “Tirreno hoje é linha completa ou alguns SKUs? Vocês carregam Shell Coolant?”</li>
+   </ul></div>
+
+  <div class="blk"><h3>Why now <span>· oportunidade</span></h3><ul>
+   <li><span class="tag h">HIPÓTESE</span>Portfólio multimarca, 1.500+ produtos, mas aditivos quase invisíveis no site — qualquer das três explicações é abertura para a X. <span class="src">[sobre · produtos Shell · post 26/08]</span><span class="fix">✗ algo errado?</span></li>
+   <li><span class="tag c">CONFIRMADO</span>Ele publicou como quer ser vendido: <i>“É a conta que mostra ao comprador o que ele ganha, não o que a sua empresa ganha.”</i> <span class="src">[post 26/08]</span><span class="fix">✗</span></li>
+  </ul></div>
+  <div class="blk"><h3>O que sabemos <span>· contexto</span></h3><ul>
+   <li><span class="tag c">CONFIRMADO</span>FORMULA PRODUTOS AUTOMOTIVOS LTDA · CNPJ 01.581.193/0001-84 · ativa desde 12/1996 · capital R$ 11,5 mi · Lucro Real · matriz Goiânia, filial logística em Aparecida (é para lá que a X entrega). <span class="src">[BrasilAPI]</span><span class="fix">✗</span></li>
+   <li><span class="tag h">HIPÓTESE</span>Fundação 1989 × 1996 × 12/1996 e 5 × 7 estados — as fontes não fecham; não repetir “35 anos”. <span class="src">[sobre · LinkedIn · BrasilAPI]</span><span class="fix">✗</span></li>
+  </ul></div>
+  <div class="blk"><h3>O que mudou <span>· sinais</span></h3><ul>
+   <li><span class="tag c">CONFIRMADO</span>Nenhuma notícia institucional e nenhuma vaga aberta em 2025–26; quem mudou foi ele — livro, entrevista e release em jun/26. <span class="src">[Indeed · Jooble · CNDL · ND Mais]</span><span class="fix">✗</span></li>
+  </ul></div>
+  <div class="blk"><h3>Quem está na mesa <span>· interlocutor</span></h3><ul>
+   <li><span class="tag c">CONFIRMADO</span><b>Paulo Brenha</b>, Diretor Comercial (comprador). Veio de J&amp;J, Mondelez, Bimbo, Shell Select — fala a língua de fabricante: giro, margem, positivação. <span class="src">[perfil · Tribuna]</span><span class="fix">✗</span></li>
+   <li><span class="tag h">HIPÓTESE</span>Entrada de marca nova pode passar pelo dono (Fernando Lima Sousa Filho) e pela relação com a Shell. <span class="src">[BrasilAPI]</span><span class="fix">✗</span></li>
+  </ul></div>
+  <div class="blk"><h3>Perguntas críticas · Resultado esperado <span>· abordagem</span></h3><ul>
+   <li><span class="tag d">DESCONHECIDO</span>“Como a Fórmula decide colocar uma marca nova no mix — quem decide, que números olha, o que fez o último lançamento bater 141%?”</li>
+   <li><span class="tag d">DESCONHECIDO</span>“Que giro por PDV um item precisa ter, e como vocês medem um lançamento nos primeiros 90 dias?”</li>
+   <li><span class="tag h">HIPÓTESE</span>Sair com: critério de entrada · resposta sobre Shell/Tirreno · quem aprova · <b>teste: 1 região · N PDVs · 90 dias · meta de giro combinada</b>, com data na agenda dele.</li>
+  </ul></div>
+  <div class="more">→ <a href="Readiness-Brief-Formula-Distribuidora.html">Abrir o brief completo (8 blocos, 24 fontes, links)</a></div>
+ </div>
+ <div class="foot">
+  Este brief foi útil? <span class="btn">👍 Útil</span><span class="btn">👎 Não ajudou</span><span class="btn">— Não li</span>
+  <div class="after">Algo errado? Clique em <b>✗</b> ao lado do fato e diga o certo — sua correção vence a fonte pública, registrada com seu nome e data (R5). · Nenhuma rede social pessoal; só informação profissional pública; fonte por fato (decisão 7).</div>
+ </div>
+</div>
+</div>
+
+<div class="strip">
+ <div><b>Onboarding (uma vez)</b>Gestor: 6 campos, ≤ 3 min (o que vendem, para quem, ticket, concorrentes, objeções, motivos de perda). Vendedor: conecta o Google Calendar — e nunca preenche nada.</div>
+ <div><b>Gatilho</b>Evento com convidado externo aparece no calendário. Ninguém pede nada. Sem convidado externo → nunca gera brief.</div>
+ <div><b>Entrega</b>Dia útil anterior, 18h: evento privado + e-mail. Reunião criada depois da véspera → imediato, com selo “última hora”.</div>
+ <div><b>Depois</b>2h após a reunião: “avançou / ficou igual / não avançou”. Mensal ao gestor: agregado, sem win rate.</div>
+</div>
+</body></html>
