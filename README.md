@@ -81,6 +81,7 @@ Os critérios de julgamento do V3 cruzados com o que o documento declara em aber
 | `achados-pesquisa-publica.md` | Preços, concorrentes e evidência de categoria — lidos na página em 29/08/2026 | Para responder "quanto custa" e "quem já faz isso" na banca |
 | `achados-gatilhos-mercado.md` | 8 gatilhos observáveis em dado público BR + tamanho de mercado (faixa e cadeia de cálculo) | Entregas 4 e 6 |
 | `jornada-do-cliente.md` (+ `jornada-produto-pm.md`, `jornada-superficie-ux.md`, `simulacoes-jornada.md`) | Jornada dentro da ferramenta — o que o V3 não definia; decidida em 29/08 | Promover ao V3 na próxima revisão |
+| `contexto/perfil_empresa.md` · `contexto/dossie_pessoa.md` · `contexto/dossie_pessoa_2.md` | **Gabaritos do MVP**: o nosso lado (o que vendemos / não fazemos) e o lado deles (2 pessoas reais, termos literais com link — gabarito 1 = retrato do ICP com rastro escasso; gabarito 2 = contraste com presença forte, porte acima do ICP) | O que o prompt do agente tem que acertar; regra: termo sem link não entra |
 | `Kit-ICP-Antessala.pdf` | Tudo diagramado | Para circular no time |
 
 ---
