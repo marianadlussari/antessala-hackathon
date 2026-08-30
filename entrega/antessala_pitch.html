@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antessala · Pitch 5 min</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   ANTESSALA · PITCH — Design System Neo-Brutalista Clean
+   Stage fixo 1680 x 672 · 7 slides · escala automática
+   ========================================================================== */
+:root{
+  --bg-canvas:#FAFAFA; --bg-card:#FFFFFF; --bg-subtle:#F4F4F5;
+  --border-light:#E5E7EB; --border-medium:#D4D4D8; --border-dark:#09090B;
+  --text-primary:#09090B; --text-secondary:#4B5563; --text-muted:#6B7280;
+  --accent-orange:#FF5A1F; --accent-orange-tint:#FFF7ED; --accent-orange-border:#FFD8A8;
+  --accent-emerald:#10B981; --accent-emerald-tint:#ECFDF5;
+  --accent-violet:#6366F1; --accent-violet-tint:#EEF2FF;
+  --accent-red:#DC2626; --accent-red-tint:#FEF2F2;
+  --font-sans:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-mono:'JetBrains Mono','SFMono-Regular',Menlo,monospace;
+  --radius-sm:6px; --radius-md:10px; --radius-lg:16px; --radius-full:9999px;
+  --shadow-neo:4px 4px 0px #09090B;
+  --shadow-neo-orange:4px 4px 0px #FF5A1F;
+  --shadow-neo-sm:3px 3px 0px #09090B;
+  --ease:cubic-bezier(0.32,0.72,0,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:#09090B}
+body{font-family:var(--font-sans);color:var(--text-primary);
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  display:flex;align-items:center;justify-content:center}
+
+/* ---------- Stage ---------- */
+#viewport{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+#stage{width:1680px;height:672px;position:relative;background:var(--bg-canvas);
+  overflow:hidden;transform-origin:center center;box-shadow:0 40px 120px rgba(0,0,0,.55)}
+.slide{position:absolute;inset:0;padding:44px 58px 42px;display:none;flex-direction:column;
+  opacity:0;transition:opacity .45s var(--ease)}
+.slide.active{display:flex;opacity:1}
+.slide.bleed{padding:32px 40px 34px}
+.slide.active .rise{animation:rise .7s var(--ease) both}
+.slide.active .rise:nth-child(2){animation-delay:.06s}
+.slide.active .rise:nth-child(3){animation-delay:.12s}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion:reduce){.slide.active .rise{animation:none}}
+
+/* ---------- Marca ---------- */
+.s-head{display:flex;align-items:center;gap:16px;margin-bottom:20px;flex:none}
+.logo-mark{display:inline-flex;align-items:center;gap:8px;background:var(--text-primary);color:#fff;
+  padding:7px 13px;border-radius:var(--radius-sm);font-family:var(--font-mono);
+  font-weight:700;letter-spacing:.08em;font-size:12px}
+.pulse-dot{width:7px;height:7px;background:var(--accent-orange);border-radius:50%;
+  box-shadow:0 0 8px var(--accent-orange);animation:pulse 1.8s infinite ease-in-out}
+@keyframes pulse{0%{transform:scale(.95);opacity:.8}50%{transform:scale(1.25);opacity:1}100%{transform:scale(.95);opacity:.8}}
+
+/* ---------- Tipografia ---------- */
+.eyebrow{display:inline-block;font-family:var(--font-mono);font-size:10.5px;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--accent-orange);
+  background:var(--accent-orange-tint);border:1px solid var(--accent-orange-border);
+  padding:5px 12px;border-radius:var(--radius-full);margin-bottom:16px}
+.eyebrow.dark{color:var(--text-primary);background:var(--bg-subtle);border-color:var(--border-medium);margin-bottom:0}
+h1.hook{font-size:60px;line-height:1.04;letter-spacing:-.038em;font-weight:800;max-width:15ch}
+h2.title{font-size:42px;line-height:1.06;letter-spacing:-.032em;font-weight:800;max-width:16ch}
+h2.title.wide{max-width:24ch}
+h2.title.sm{font-size:34px;max-width:none}
+.lede{font-size:18px;line-height:1.5;color:var(--text-secondary);max-width:52ch;margin-top:16px}
+.hl{background:linear-gradient(180deg,transparent 62%,rgba(255,90,31,.30) 62%);padding:0 2px}
+.ul-orange{border-bottom:4px solid var(--accent-orange)}
+
+/* ---------- Layout ---------- */
+.body{flex:1;display:grid;gap:22px;min-height:0}
+.g-40-60{grid-template-columns:0.64fr 1fr}
+.g-45-55{grid-template-columns:0.8fr 1fr}
+.g-50-50{grid-template-columns:1fr 1fr}
+.g-3{grid-template-columns:repeat(3,1fr)}
+.auto{flex:0 0 auto}
+.col{display:flex;flex-direction:column;gap:16px;min-height:0}
+.col.center{justify-content:center}
+.left-pane{display:flex;flex-direction:column;justify-content:center;padding-right:10px}
+
+/* ---------- Cards ---------- */
+.card{background:var(--bg-card);border:1px solid var(--border-dark);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-neo);padding:20px 22px;display:flex;flex-direction:column;gap:9px}
+.card.tint-o{background:var(--accent-orange-tint);border-color:var(--accent-orange)}
+.card.tint-e{background:var(--accent-emerald-tint);border-color:var(--accent-emerald)}
+.card.tint-v{background:var(--accent-violet-tint);border-color:var(--accent-violet)}
+.card.flat{box-shadow:none;border-color:var(--border-medium)}
+.card.dark{background:var(--text-primary);border-color:var(--text-primary);
+  box-shadow:var(--shadow-neo-orange);color:#fff}
+.card.dark .k-label{color:#A1A1AA}
+.card.dark .k-num{color:#fff}
+.k-label{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--text-muted)}
+.k-num{font-size:44px;font-weight:800;letter-spacing:-.04em;line-height:1;font-family:var(--font-mono)}
+.k-num.sm{font-size:30px}
+.k-txt{font-size:14px;line-height:1.42;color:var(--text-secondary)}
+.k-txt b{color:var(--text-primary)}
+.src{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.06em;color:var(--text-muted);
+  text-transform:uppercase;margin-top:auto;padding-top:8px;border-top:1px dashed var(--border-medium)}
+
+/* ---------- Tags ---------- */
+.tag{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:9.5px;
+  font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;
+  border-radius:var(--radius-sm);border:1px solid;flex:none}
+.tag.ok{color:#047857;background:var(--accent-emerald-tint);border-color:var(--accent-emerald)}
+.tag.hy{color:#4338CA;background:var(--accent-violet-tint);border-color:var(--accent-violet)}
+.tag.un{color:var(--text-secondary);background:var(--bg-subtle);border-color:var(--border-medium)}
+.tag.o{color:var(--accent-orange);background:var(--accent-orange-tint);border-color:var(--accent-orange-border)}
+
+/* ---------- Cadeia do gancho ---------- */
+.chain{display:flex;flex-direction:column;gap:0}
+.chain-step{display:grid;grid-template-columns:34px 1fr;gap:16px;align-items:start;padding:14px 0}
+.chain-step + .chain-step{border-top:1px solid var(--border-light)}
+.chain-step .m{width:34px;height:34px;border-radius:var(--radius-sm);display:flex;align-items:center;
+  justify-content:center;font-family:var(--font-mono);font-size:15px;font-weight:700;flex:none}
+.chain-step .m.no{background:var(--bg-subtle);color:var(--text-muted);border:1px solid var(--border-medium)}
+.chain-step .m.yes{background:var(--accent-orange);color:#fff}
+.chain-step .m.eye{background:var(--text-primary);color:#fff}
+.chain-step .t{font-size:18px;line-height:1.4;padding-top:5px}
+.chain-step .t b{font-weight:800}
+.chain-step .t.mut{color:var(--text-muted)}
+
+/* ---------- Faixa escura ---------- */
+.band{background:var(--text-primary);color:#fff;border:1px solid var(--text-primary);
+  border-radius:var(--radius-lg);box-shadow:var(--shadow-neo-orange);
+  padding:22px 28px;display:flex;flex-direction:column;gap:12px}
+.band h3{font-size:31px;letter-spacing:-.028em;line-height:1.12;font-weight:800}
+.band ul{list-style:none;display:flex;gap:30px;flex-wrap:wrap}
+.band li{font-size:14.5px;line-height:1.35;display:flex;gap:8px;align-items:flex-start;color:#E4E4E7;max-width:32ch}
+.band li::before{content:"—";color:var(--accent-orange);font-weight:700;flex:none}
+
+/* ---------- Tabela ---------- */
+table.mkt{width:100%;border-collapse:collapse;font-size:14px}
+table.mkt th{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--text-muted);text-align:left;padding:0 10px 8px 0;border-bottom:1px solid var(--border-dark);font-weight:700}
+table.mkt td{padding:9px 10px 9px 0;border-bottom:1px solid var(--border-light);vertical-align:top;line-height:1.3}
+table.mkt td.p{font-family:var(--font-mono);font-weight:700;white-space:nowrap}
+table.mkt tr:last-child td{border-bottom:none}
+
+/* ---------- Brief em tela cheia ---------- */
+.brief{background:var(--bg-card);border:1px solid var(--border-dark);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-neo);overflow:hidden;display:flex;flex-direction:column;flex:1;min-height:0}
+.brief-top{background:var(--text-primary);color:#fff;padding:13px 20px;display:flex;align-items:center;gap:14px;flex:none}
+.brief-top .ttl{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.brief-top .who{display:flex;align-items:baseline;gap:9px;margin-left:8px;padding-left:16px;border-left:1px solid #3F3F46}
+.brief-top .who b{font-size:15px;letter-spacing:-.015em}
+.brief-top .who span{font-size:12.5px;color:#A1A1AA}
+.brief-top .when{margin-left:auto;font-family:var(--font-mono);font-size:11.5px;color:var(--accent-orange)}
+.brief-grid{flex:1;display:grid;grid-template-columns:1fr 1fr;min-height:0}
+.brief-col{padding:14px 20px;display:flex;flex-direction:column;justify-content:space-evenly}
+.brief-col + .brief-col{border-left:1px solid var(--border-light)}
+.b-row{display:flex;gap:12px;align-items:flex-start;padding:7px 0}
+.b-row + .b-row{border-top:1px solid var(--border-light)}
+.b-row .lbl{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-muted);width:96px;flex:none;padding-top:2px;font-weight:700}
+.b-row .val{font-size:14px;line-height:1.4;flex:1}
+.link{color:var(--accent-violet);text-decoration:underline;text-underline-offset:2px;font-size:11px;font-family:var(--font-mono)}
+.legend{display:flex;gap:22px;align-items:center;justify-content:center;flex:none;padding-top:12px}
+.legend span{font-size:12.5px;color:var(--text-secondary)}
+
+/* ---------- Quem ---------- */
+.persona{background:var(--bg-card);border:1px solid var(--border-dark);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-neo);padding:28px 30px;display:flex;flex-direction:column;gap:14px;justify-content:center}
+.persona.pay{background:var(--text-primary);border-color:var(--text-primary);
+  box-shadow:var(--shadow-neo-orange);color:#fff}
+.persona .role{font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent-orange)}
+.persona h3{font-size:32px;letter-spacing:-.03em;line-height:1.12;font-weight:800}
+.persona p{font-size:17px;line-height:1.45;color:var(--text-secondary)}
+.persona.pay p{color:#D4D4D8}
+
+/* ---------- Autonomia ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0;height:330px;align-self:center;width:100%}
+.split-side{border:1px solid var(--border-dark);padding:30px 32px;display:flex;flex-direction:column;gap:16px;justify-content:center}
+.split-side:first-child{border-radius:var(--radius-lg) 0 0 var(--radius-lg);background:var(--text-primary);
+  border-color:var(--text-primary);color:#fff}
+.split-side:last-child{border-radius:0 var(--radius-lg) var(--radius-lg) 0;border-left:none;background:var(--bg-card)}
+.split-side .lbl{font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.split-side:first-child .lbl{color:var(--accent-orange)}
+.split-side:last-child .lbl{color:var(--accent-emerald)}
+.split-side h3{font-size:27px;letter-spacing:-.028em;line-height:1.14;font-weight:800}
+.split-side ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.split-side li{font-size:15.5px;line-height:1.35;display:flex;gap:9px;align-items:flex-start}
+.split-side:first-child li{color:#E4E4E7}
+.split-side:first-child li::before{content:"—";color:var(--accent-orange);font-weight:700;flex:none}
+.split-side:last-child li{color:var(--text-secondary)}
+.split-side:last-child li::before{content:"—";color:var(--accent-emerald);font-weight:700;flex:none}
+
+/* ---------- Planos ---------- */
+.plan{background:var(--bg-card);border:1px solid var(--border-dark);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-neo);padding:24px 26px;display:flex;flex-direction:column;gap:12px}
+.plan.hi{background:var(--accent-orange-tint);border-color:var(--accent-orange);box-shadow:var(--shadow-neo-orange)}
+.plan .name{font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--text-muted)}
+.plan.hi .name{color:var(--accent-orange)}
+.plan .price{font-family:var(--font-mono);font-size:46px;font-weight:800;letter-spacing:-.045em;line-height:1}
+.plan .price small{font-size:16px;font-weight:600;letter-spacing:0;color:var(--text-muted)}
+.plan ul{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:2px}
+.plan li{font-size:14.5px;line-height:1.35;color:var(--text-secondary);display:flex;gap:8px}
+.plan li::before{content:"✓";color:var(--accent-emerald);font-weight:800;flex:none}
+.plan li b{color:var(--text-primary)}
+
+/* ---------- Protótipo ao vivo ---------- */
+.slide.proto{padding:0;z-index:6;display:flex;align-items:center;justify-content:center;background:var(--bg-canvas);overflow:hidden}
+.proto-frame{border:0;width:1560px;height:815px;flex:none;background:var(--bg-canvas);transform:scale(.8245);transform-origin:center center}
+.proto-nav{position:absolute;top:14px;right:16px;z-index:9;display:flex;align-items:center;gap:8px;
+  background:rgba(9,9,11,.9);border-radius:var(--radius-full);padding:6px 8px 6px 16px;
+  opacity:.28;transition:opacity .3s var(--ease)}
+.proto-nav:hover{opacity:1}
+.proto-nav .lbl{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:#A1A1AA}
+.proto-nav button{width:30px;height:30px;border-radius:var(--radius-full);border:1px solid #3F3F46;
+  background:#18181B;color:#fff;font-size:14px;cursor:pointer;display:flex;align-items:center;
+  justify-content:center;transition:all .25s var(--ease);font-family:var(--font-mono)}
+.proto-nav button:hover{background:var(--accent-orange);border-color:var(--accent-orange)}
+.proto-nav button:active{transform:scale(.94)}
+
+/* ---------- Rodapé mínimo ---------- */
+.dots{position:absolute;right:58px;bottom:24px;display:flex;gap:6px;z-index:4}
+.dot{width:26px;height:5px;border-radius:var(--radius-full);background:var(--border-medium);
+  transition:background .3s var(--ease)}
+.dot.on{background:var(--accent-orange)}
+.dot.done{background:var(--text-primary)}
+#bar{position:absolute;left:0;bottom:0;height:4px;width:0%;background:var(--accent-orange);
+  transition:width .35s linear;z-index:8}
+#bar.over{background:var(--accent-red)}
+
+/* ---------- Notas / HUD ---------- */
+#notes{position:fixed;left:0;right:0;bottom:0;max-height:42vh;overflow:auto;
+  background:#09090B;color:#E4E4E7;padding:18px 26px;display:none;z-index:20;
+  border-top:3px solid var(--accent-orange);font-size:14px;line-height:1.55}
+#notes.on{display:block}
+#notes h4{font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent-orange);margin-bottom:8px}
+#notes p{margin-bottom:7px;max-width:120ch}
+#notes .say{color:#fff;font-weight:600}
+#hud{position:fixed;top:8px;right:14px;font-family:var(--font-mono);font-size:10.5px;color:#A1A1AA;
+  z-index:21;letter-spacing:.06em;background:rgba(9,9,11,.86);padding:6px 14px;
+  border-radius:var(--radius-full);transition:opacity .6s var(--ease);display:flex;gap:14px}
+#hud.hide{opacity:0;pointer-events:none}
+#hud b{color:#fff}
+#hud .run{color:var(--accent-orange)}
+#hud .run.on{color:var(--accent-emerald)}
+</style>
+</head>
+<body>
+
+<div id="viewport"><div id="stage">
+
+<!-- ══════════════════ 1 · GANCHO ══════════════════ -->
+<section class="slide" data-dur="40" data-notes="
+<h4>1 · Gancho · 45s</h4>
+<p class='say'>“Quanto custa perder um negócio para a sua empresa?”</p>
+<p><b>Pergunte e espere.</b> Dois segundos de silêncio. A pergunta é para o júri responder na cabeça — se você emendar, ela vira retórica e perde o efeito.</p>
+<p>“Em muitas empresas, essa perda não acontece porque faltou produto ou faltou preço. <b>Ela acontece antes</b> — quando uma reunião importante acontece sem o contexto necessário para o vendedor. E esse negócio perdido é <b>invisível para o gestor</b>: ninguém mede a reunião que rendeu menos do que poderia.”</p>
+<p><b>Deixe a última linha no ar.</b> “Invisível para o gestor” é o gancho — não explique, não emende no próximo slide correndo. Um segundo de pausa antes de avançar.</p>
+<p style='color:#FF5A1F'><b>Se quiser reforço e houver tempo:</b> “Perguntamos a cinco times comerciais reais e os cinco já perderam uma venda por falta de contexto.” Só falado, não está na tela — e sempre com a ressalva de que cinco entrevistas não são amostra estatística.</p>">
+  <div class="s-head"><div class="logo-mark"><span class="pulse-dot"></span>ANTESSALA</div></div>
+  <div class="body g-45-55">
+    <div class="left-pane rise">
+      <h1 class="hook">Quanto custa <span class="hl">perder um negócio</span> para a sua empresa?</h1>
+    </div>
+    <div class="col center rise">
+      <div class="chain">
+        <div class="chain-step">
+          <span class="m no">✕</span>
+          <span class="t mut">Não aconteceu porque faltou <b>produto</b>.</span>
+        </div>
+        <div class="chain-step">
+          <span class="m no">✕</span>
+          <span class="t mut">Não aconteceu porque faltou <b>preço</b>.</span>
+        </div>
+        <div class="chain-step">
+          <span class="m yes">!</span>
+          <span class="t"><b>Aconteceu antes:</b> uma reunião importante aconteceu sem o contexto necessário para o vendedor.</span>
+        </div>
+        <div class="chain-step">
+          <span class="m eye">◎</span>
+          <span class="t">E esse negócio perdido é <b>invisível para o gestor</b> — ninguém mede a reunião que rendeu menos do que poderia.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 2 · PROBLEMA ══════════════════ -->
+<section class="slide" data-dur="40" data-notes="
+<h4>2 · Problema · 45s</h4>
+<p class='say'>“Muitas PMEs não têm SDR de pesquisa, não têm RevOps e não têm nenhuma ferramenta de sales intelligence.”</p>
+<p>“O vendedor junta contexto <b>quando dá</b>, de fontes diferentes — e a qualidade varia de pessoa para pessoa. Resultado: oportunidades que não avançam.”</p>
+<p><b>Sustente com dois números, não três:</b> “No Brasil, 52% dos times de Vendas não usam o histórico do lead que recebem, e 62% não têm SLA entre Marketing e Vendas. O contexto existe — ele só não circula.” (RD Station 2026)</p>
+<p><b>Se quiser o terceiro, é o mais forte:</b> “94% dos compradores B2B já ordenaram a shortlist por preferência antes de falar com qualquer vendedor.” (6sense, Buyer Experience Report 2025, mais de 4.000 compradores) “A conversa começa quase decidida.”</p>
+<p><b>Fecho:</b> “Não falta ferramenta. Falta um trabalho com dono.”</p>
+<p style='color:#FF5A1F'><b>NÃO diga:</b> ‘82% dos decisores acham vendedores despreparados’ — é folclore sem fonte primária.</p>">
+  <div class="s-head"><div class="logo-mark"><span class="pulse-dot"></span>ANTESSALA</div></div>
+  <div class="body g-40-60">
+    <div class="left-pane rise">
+      <div class="eyebrow">O trabalho que não tem dono</div>
+      <h2 class="title">A PME não tem <span class="hl">quem prepare</span> a reunião.</h2>
+    </div>
+    <div class="col center rise">
+      <div class="body g-3 auto" style="gap:16px">
+        <div class="card">
+          <div class="k-label">Contexto não circula</div>
+          <div class="k-num">52<span style="font-size:26px">%</span></div>
+          <div class="k-txt">dos times de Vendas brasileiros <b>não usam o histórico</b> do lead que recebem de Marketing.</div>
+          <div class="src">RD Station · Panorama 2026</div>
+        </div>
+        <div class="card">
+          <div class="k-label">Operação fragmentada</div>
+          <div class="k-num">62<span style="font-size:26px">%</span></div>
+          <div class="k-txt">das empresas <b>não têm SLA</b> entre Marketing e Vendas.</div>
+          <div class="src">RD Station · Maturidade Operacional 2026</div>
+        </div>
+        <div class="card">
+          <div class="k-label">Comprador já decidiu</div>
+          <div class="k-num">94<span style="font-size:26px">%</span></div>
+          <div class="k-txt">dos compradores <b>ordenaram a shortlist</b> antes de falar com qualquer vendedor.</div>
+          <div class="src">6sense · Buyer Experience Report 2025</div>
+        </div>
+      </div>
+      <div class="card dark" style="flex-direction:row;align-items:center;gap:20px;padding:18px 24px">
+        <span class="tag o">Resultado</span>
+        <div style="font-size:19px;font-weight:700;letter-spacing:-.018em;line-height:1.3">
+          Oportunidades que não avançam. Não falta ferramenta — falta um trabalho com dono.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 3 · PRODUTO ══════════════════ -->
+<section class="slide" data-dur="40" data-notes="
+<h4>3 · Produto · 45s</h4>
+<p class='say'>“E se essa preparação acontecesse sozinha, antes de cada reunião?”</p>
+<p>“O Antessala é um <b>autopilot all-in-one</b>. Ele só precisa de um gatilho: <b>uma reunião agendada</b>. Não existe botão ‘gerar briefing’ — se alguém precisa pedir, virou chatbot.”</p>
+<p><b>O posicionamento — diga com todas as letras:</b> “Ele atua onde os outros falham: <b>o mercado brasileiro</b>. Dado cadastral de CNPJ direto na Receita, de graça. Preço em real, sem contrato anual em dólar. E o brief chega no WhatsApp, no e-mail ou no próprio webapp — onde o vendedor já estiver.”</p>
+<p><b>Se sobrar tempo, o contraste:</b> “A Econodata entrega dado cadastral bruto. A Meetime organiza a cadência. A ZoomInfo custa de 15 a 40 mil dólares por ano e não atende uma PME de seis vendedores. Nenhuma entrega a reunião pronta.”</p>">
+  <div class="s-head"><div class="logo-mark"><span class="pulse-dot"></span>ANTESSALA</div></div>
+  <div class="body" style="grid-template-rows:auto 1fr;gap:20px">
+    <div class="band rise">
+      <div class="k-label" style="color:#A1A1AA">E se essa preparação acontecesse sozinha, antes de cada reunião?</div>
+      <h3>Autopilot all-in-one. Um gatilho só: <span style="color:var(--accent-orange)">uma reunião agendada.</span></h3>
+      <ul>
+        <li>Ninguém pede nada — não existe botão “gerar briefing”</li>
+        <li>O readiness brief chega no WhatsApp, no e-mail ou no próprio webapp</li>
+        <li>Fonte em toda afirmação — sem fonte, vira pergunta</li>
+      </ul>
+    </div>
+    <div class="col center rise">
+      <div style="display:flex;align-items:baseline;gap:18px;flex-wrap:wrap">
+        <h2 class="title sm" style="font-size:32px">Atua onde os outros falham: <span class="hl">o mercado brasileiro.</span></h2>
+      </div>
+      <div class="body g-3 auto" style="gap:18px;margin-top:14px">
+        <div class="card tint-e">
+          <div class="k-label" style="color:#047857">Dado local</div>
+          <div class="k-txt" style="font-size:15px">CNPJ, CNAE, porte e quadro societário direto na Receita — <b>custo zero</b>, e um time estrangeiro não teria isso.</div>
+        </div>
+        <div class="card tint-o">
+          <div class="k-label" style="color:var(--accent-orange)">Preço em real</div>
+          <div class="k-txt" style="font-size:15px">Sem contrato anual em dólar e sem semanas de setup. <b>Cabe no orçamento de uma PME.</b></div>
+        </div>
+        <div class="card tint-v">
+          <div class="k-label" style="color:#4338CA">Onde o vendedor está</div>
+          <div class="k-txt" style="font-size:15px">Chega no <b>WhatsApp</b>, no e-mail ou no webapp — não em mais um painel para ele lembrar de abrir.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 4 · O BRIEF ══════════════════ -->
+<section class="slide bleed" data-dur="45" data-notes="
+<h4>4 · O brief · 60s — o slide mais importante do pitch</h4>
+<p class='say'>“Isto é o que chega ao vendedor 15 minutos antes da reunião, sem ninguém pedir — no WhatsApp, no e-mail ou no próprio webapp.”</p>
+<p><b>Pare de falar por três segundos.</b> Deixe a banca ler o primeiro bloco sozinha. Slide cheio + narração simultânea = ninguém lê e ninguém ouve.</p>
+<p><b>Depois aponte três coisas — só três, não oito:</b></p>
+<p><b>1 · O cruzamento, não o dado:</b> “‘Abriu 12 vagas de vendedor’ sozinho é ruído. Cruzado com o que este cliente vende, vira: a dor que você endereça acabou de crescer. Essa é a diferença entre um agregador e o Antessala.”</p>
+<p><b>2 · A etiqueta desconhecido:</b> “Aqui ele não sabia — e não inventou. Virou pergunta de discovery. Toda afirmação carrega a URL de onde veio; sem fonte buscada, não vira fato. É regra em código, não prompt.”</p>
+<p><b>3 · A última linha:</b> “Termina com o avanço que aquela call precisa produzir. Não é resumo — é objetivo.”</p>">
+  <div class="brief rise">
+    <div class="brief-top">
+      <span class="pulse-dot"></span>
+      <span class="ttl">Readiness brief · WhatsApp · e-mail · webapp</span>
+      <span class="who"><b>Ricardo Silveira</b><span>VP de Operações · Nexus Tech</span></span>
+      <span class="when">reunião 15:00 · chegou 14:45 · ninguém pediu</span>
+    </div>
+    <div class="brief-grid">
+      <div class="brief-col">
+        <div class="b-row"><span class="lbl">Why now</span><span class="val"><b>Rodada Série A de R$ 18M fechada há 3 semanas.</b> Pressão declarada por dobrar o time comercial até o Q4 — o orçamento mudou de tamanho. <span class="tag ok">confirmado</span> <a class="link">exame.com ↗</a></span></div>
+        <div class="b-row"><span class="lbl">O que mudou</span><span class="val">12 vagas abertas para SDR e AE nos últimos 3 dias. Cruzado com o que você vende: <b>a dor que você endereça acabou de crescer.</b> <span class="tag ok">confirmado</span> <a class="link">gupy ↗</a></span></div>
+        <div class="b-row"><span class="lbl">Na mesa</span><span class="val"><b>Ricardo Silveira · VP de Operações</b> — decisor. Orientado a métrica: leve número, não narrativa. <span class="tag hy">hipótese</span> <span style="font-size:11.5px;color:var(--text-muted)">inferido de palestra pública</span></span></div>
+        <div class="b-row"><span class="lbl">O que sabemos</span><span class="val">Negócio aberto há 45 dias, proposta enviada, sem resposta há 12. Ticket na faixa alta da sua carteira. <span class="tag ok">confirmado</span> <span style="font-size:11.5px;color:var(--text-muted)">seu histórico</span></span></div>
+      </div>
+      <div class="brief-col">
+        <div class="b-row"><span class="lbl">Riscos</span><span class="val">Objeção provável — <b>“já temos CRM e sales engagement”</b>. É o motivo de perda nº 1 registrado no seu próprio histórico. <span class="tag ok">confirmado</span></span></div>
+        <div class="b-row"><span class="lbl">O que falta</span><span class="val">Orçamento aprovado para 2027 e quem assina acima do Ricardo. <span class="tag un">desconhecido</span> <b>→ virou pergunta, não invenção.</b></span></div>
+        <div class="b-row"><span class="lbl">Perguntas</span><span class="val">“Com o time dobrando, quem passa a aprovar ferramenta de vendas?” · “O que precisaria ser verdade para isto entrar no orçamento deste trimestre?”</span></div>
+        <div class="b-row"><span class="lbl">Resultado</span><span class="val"><b>O avanço que esta call precisa produzir:</b> sair com piloto de 30 dias agendado e o decisor de orçamento nomeado.</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="legend rise">
+    <span><span class="tag ok">confirmado</span> tem fonte — vai como fato, com link</span>
+    <span><span class="tag hy">hipótese</span> inferido — vai marcado, com o porquê</span>
+    <span><span class="tag un">desconhecido</span> <b>vira pergunta, nunca invenção</b></span>
+  </div>
+</section>
+
+<!-- ══════════════════ 5 · PROTÓTIPO AO VIVO ══════════════════ -->
+<section class="slide proto" data-dur="50" data-notes="
+<h4>5 · Protótipo ao vivo · 50s — está rodando de verdade</h4>
+<p class='say'>“E isso não é uma tela desenhada. É o produto rodando.”</p>
+<p><b>Navegue pela barra de baixo do próprio protótipo</b> — ONBOARDING · CRM · BRIEF · CONFIG. Escolha <b>dois</b> caminhos, não quatro. Mais que isso e você perde o tempo dos outros blocos.</p>
+<p><b>Sugestão de percurso:</b> comece em <b>ONBOARDING</b> — “esta é a única vez que o cliente conversa com o produto; depois disso a interface some”. Depois pule para <b>BRIEF</b> — “e isto é o que chega antes da reunião, sem ninguém pedir”.</p>
+<p><b>Se o CRM ajudar a explicar o gatilho:</b> mostre que a reunião agendada é o que dispara tudo — não há botão ‘gerar briefing’.</p>
+<p style='color:#FF5A1F'><b>Atenção com o teclado:</b> depois de clicar dentro do protótipo, as setas passam a controlar o protótipo, não o deck. Para avançar de slide, use os botões <b>◀ ▶</b> no canto superior direito (eles aparecem ao passar o mouse), ou clique fora e depois use as setas.</p>">
+  <iframe class="proto-frame" src="Antessala%20Prototipo%20(standalone)2.html"
+          title="Antessala · protótipo navegável"></iframe>
+  <div class="proto-nav">
+    <span class="lbl">slide</span>
+    <button type="button" data-go="-1" title="Slide anterior">←</button>
+    <button type="button" data-go="1" title="Próximo slide">→</button>
+  </div>
+</section>
+
+<!-- ══════════════════ 6 · QUEM ══════════════════ -->
+<section class="slide" data-dur="25" data-notes="
+<h4>5 · Quem · 30s</h4>
+<p class='say'>“Quem usa é o vendedor. Quem paga é quem sente a perda no fim do mês.”</p>
+<p><b>Usuário:</b> vendedor, executivo de contas. “Precisa chegar à reunião com contexto, riscos e as perguntas certas — sem reconstruir tudo sozinho.”</p>
+<p><b>Comprador:</b> dono, diretor comercial ou head de vendas. “É quem sente no resultado do mês as oportunidades que não avançam.”</p>
+<p><b>A frase que fecha o slide:</b> “Na PME, os dois sentam na mesma mesa. Quem sente a dor é quem assina — e é por isso que este ciclo de venda é curto.”</p>">
+  <div class="s-head"><div class="logo-mark"><span class="pulse-dot"></span>ANTESSALA</div></div>
+  <div class="body" style="grid-template-rows:1fr auto;gap:18px">
+    <div class="body g-50-50 rise" style="gap:22px">
+      <div class="persona">
+        <span class="role">Quem usa</span>
+        <h3>Vendedor · executivo de contas</h3>
+        <p>Precisa chegar à reunião com <b>contexto, riscos e as perguntas certas</b> — sem reconstruir tudo sozinho, cinco minutos antes.</p>
+      </div>
+      <div class="persona pay">
+        <span class="role">Quem paga</span>
+        <h3>Dono · diretor comercial · head de vendas</h3>
+        <p>É quem sente <b>no resultado do mês</b> as oportunidades que não avançam — e quem não consegue enxergar por quê.</p>
+      </div>
+    </div>
+    <div class="card flat rise" style="flex-direction:row;align-items:center;gap:16px;padding:16px 22px;background:var(--bg-subtle)">
+      <span class="tag o">Por que isso importa</span>
+      <div style="font-size:17px;font-weight:700;letter-spacing:-.015em">Na PME, os dois sentam na mesma mesa. Quem sente a dor é quem assina.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 7 · AUTONOMIA ══════════════════ -->
+<section class="slide" data-dur="25" data-notes="
+<h4>6 · Autonomia · 30s — vale 20% da nota da banca</h4>
+<p class='say'>“A máquina prepara. O vendedor decide.”</p>
+<p>“Ela pesquisa, organiza, identifica riscos e sugere as perguntas. O vendedor conduz a conversa, negocia e decide o rumo do negócio.”</p>
+<p><b>A frase que responde ‘isso é autônomo mesmo?’:</b> “A máquina <b>não altera nada no mundo</b> — só entrega leitura. Por isso não precisa de aprovação em nenhuma etapa, e por isso é seguro deixá-la rodar sozinha.”</p>
+<p><b>Se questionarem a fronteira:</b> “É deliberada. Um agente que decidisse o que propor ou que falasse com o cliente seria arriscado e perderia a confiança do vendedor. O trabalho humano que substituímos é a preparação — e essa fazemos inteira.”</p>">
+  <div class="s-head" style="gap:16px;align-items:center">
+    <div class="logo-mark"><span class="pulse-dot"></span>ANTESSALA</div>
+    <div class="eyebrow dark">Autonomia · onde a máquina para</div>
+  </div>
+  <div class="body" style="grid-template-rows:auto auto;align-content:center;gap:20px">
+    <div class="split rise">
+      <div class="split-side">
+        <span class="lbl">A máquina prepara</span>
+        <h3>Trabalho humano efetivamente substituído</h3>
+        <ul>
+          <li>Pesquisa a conta e os participantes</li>
+          <li>Organiza e consolida o contexto</li>
+          <li>Identifica riscos e o que falta descobrir</li>
+          <li>Sugere as perguntas certas para a call</li>
+        </ul>
+      </div>
+      <div class="split-side">
+        <span class="lbl">O vendedor decide</span>
+        <h3>Decisão comercial, inteira com o humano</h3>
+        <ul>
+          <li>Confirma dor, orçamento e urgência</li>
+          <li>Conduz a conversa</li>
+          <li>Negocia</li>
+          <li>Decide o rumo do negócio</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card dark rise" style="flex-direction:row;align-items:center;gap:20px;padding:18px 24px">
+      <span class="tag o">Por isso roda sozinho</span>
+      <div style="font-size:19px;font-weight:700;letter-spacing:-.018em;line-height:1.3">
+        A máquina não altera nada no mundo — só entrega leitura. Por isso não precisa de aprovação em nenhuma etapa.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 8 · NEGÓCIO ══════════════════ -->
+<section class="slide" data-dur="35" data-notes="
+<h4>7 · Negócio · 45s — último slide, feche e pare</h4>
+<p class='say'>“B2B SaaS por assinatura mensal. Cento e oitenta e sete reais para um usuário, até 50 reuniões. Quatrocentos e noventa e sete para até cinco usuários, com reuniões ilimitadas.”</p>
+<p><b>A economia — é o que sustenta o preço:</b> “Custa quarenta centavos produzir um brief. A margem bruta fica perto de 88%. Baixo custo para operar, alto valor potencial por oportunidade.”</p>
+<p><b>A validação, e diga os nomes:</b> “Perguntamos a cinco empresas se pagariam por isso. <b>Cinco de cinco disseram que sim.</b> Com a ressalva na mesma frase: intenção declarada não é compra — o próximo teste é voltar com preço na mesa e um piloto de 30 dias.”</p>
+<p class='say'>Última frase, e então pare de falar: <b>“Uma reunião agendada. É só isso que a gente precisa para devolver a reunião preparada.”</b></p>
+<p style='color:#FF5A1F'><b>⚠ Confirme antes de apresentar:</b> o R$ 15,00 por reunião está no slide como <u>reunião adicional além das 50</u>. Se a intenção era outra, ajuste — é um número que vai para a tela.</p>">
+  <div class="s-head" style="gap:16px;align-items:center">
+    <div class="logo-mark"><span class="pulse-dot"></span>ANTESSALA</div>
+    <div class="eyebrow dark">B2B SaaS · assinatura mensal</div>
+  </div>
+  <div class="body g-45-55">
+    <div class="left-pane rise">
+      <h2 class="title">Baixo custo para operar. <span class="hl">Alto valor por oportunidade.</span></h2>
+      <div class="body g-3 auto" style="gap:14px;margin-top:26px">
+        <div class="card tint-o" style="padding:16px 18px;gap:5px">
+          <div class="k-label" style="color:var(--accent-orange)">Custo por brief</div>
+          <div class="k-num sm">R$ 0,40</div>
+          <div class="k-txt" style="font-size:12.5px">preço verificado, não estimado</div>
+        </div>
+        <div class="card tint-e" style="padding:16px 18px;gap:5px">
+          <div class="k-label" style="color:#047857">Margem bruta</div>
+          <div class="k-num sm">~88%</div>
+          <div class="k-txt" style="font-size:12.5px">margem de SaaS, não de serviço</div>
+        </div>
+        <div class="card dark" style="padding:16px 18px;gap:5px">
+          <div class="k-label" style="color:var(--accent-orange)">Pagariam por isso</div>
+          <div class="k-num sm">5/5</div>
+          <div class="k-txt" style="font-size:12.5px;color:#A1A1AA">entrevistados · intenção declarada</div>
+        </div>
+      </div>
+    </div>
+    <div class="col center rise">
+      <div class="body g-50-50 auto" style="gap:20px">
+        <div class="plan">
+          <span class="name">Individual</span>
+          <div class="price">R$ 187<small> /mês</small></div>
+          <ul>
+            <li><b>1 usuário</b></li>
+            <li>Até <b>50 reuniões</b> por mês</li>
+            <li>Reunião adicional: <b>R$ 15</b></li>
+          </ul>
+        </div>
+        <div class="plan hi">
+          <span class="name">Time</span>
+          <div class="price">R$ 497<small> /mês</small></div>
+          <ul>
+            <li><b>Até 5 usuários</b></li>
+            <li><b>Reuniões ilimitadas</b></li>
+            <li>R$ 99 por vendedor — menos que uma hora dele</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card flat" style="flex-direction:row;align-items:center;gap:16px;padding:16px 20px;background:var(--bg-subtle)">
+        <span class="pulse-dot"></span>
+        <div style="font-size:17px;font-weight:700;letter-spacing:-.015em">Uma reunião agendada. É só isso que a gente precisa.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- chrome mínimo ---------- -->
+<div class="dots" id="dots"></div>
+<div id="bar"></div>
+
+</div></div>
+
+<div id="notes"></div>
+<div id="hud">
+  <span>slide <b id="idx">1</b>/<b id="tot">8</b></span>
+  <span>bloco <b id="blk">00:00</b>/<span id="dur">0:40</span></span>
+  <span>total <b id="tot-t">00:00</b>/5:00</span>
+  <span class="run" id="tstate">⏸ espaço</span>
+  <span>← → · N notas · R zerar · F tela cheia</span>
+</div>
+
+<script>
+(function(){
+  const stage=document.getElementById('stage'), vp=document.getElementById('viewport');
+  const slides=[...document.querySelectorAll('.slide')];
+  const W=1680,H=672;
+  let i=0, running=false, blockT=0, totalT=0, tick=null;
+
+  function fit(){
+    const notesOn=document.getElementById('notes').classList.contains('on');
+    const availH=(notesOn?window.innerHeight*0.56:window.innerHeight)-24;
+    const s=Math.min((window.innerWidth-24)/W, availH/H);
+    stage.style.transform='scale('+s+')';
+    vp.style.alignItems=notesOn?'flex-start':'center';
+    vp.style.paddingTop=notesOn?'12px':'0';
+  }
+  window.addEventListener('resize',fit);
+
+  const dots=document.getElementById('dots');
+  slides.forEach(()=>{const d=document.createElement('div');d.className='dot';dots.appendChild(d)});
+  const dotEls=[...dots.children];
+  document.getElementById('tot').textContent=slides.length;
+
+  function fmt(s){const m=Math.floor(s/60),x=Math.floor(s%60);
+    return String(m).padStart(2,'0')+':'+String(x).padStart(2,'0')}
+
+  function render(){
+    slides.forEach((s,n)=>s.classList.toggle('active',n===i));
+    dotEls.forEach((d,n)=>{d.className='dot'+(n===i?' on':(n<i?' done':''))});
+    document.getElementById('idx').textContent=i+1;
+    document.getElementById('dur').textContent=fmt(+slides[i].dataset.dur).replace(/^0/,'');
+    document.getElementById('notes').innerHTML=slides[i].dataset.notes||'';
+    blockT=0; paint();
+  }
+  function paint(){
+    const dur=+slides[i].dataset.dur;
+    const bar=document.getElementById('bar');
+    bar.style.width=Math.min(100,(blockT/dur)*100)+'%';
+    bar.classList.toggle('over',blockT>dur);
+    document.getElementById('blk').textContent=fmt(blockT);
+    document.getElementById('blk').style.color=blockT>dur?'#DC2626':'';
+    document.getElementById('tot-t').textContent=fmt(totalT);
+  }
+  function go(n){ i=Math.max(0,Math.min(slides.length-1,n)); render(); }
+
+  function setRun(v){
+    running=v;
+    const st=document.getElementById('tstate');
+    st.textContent=running?'▶ rodando':'⏸ espaço';
+    st.classList.toggle('on',running);
+    if(tick) clearInterval(tick);
+    if(running) tick=setInterval(()=>{blockT++;totalT++;paint()},1000);
+  }
+
+  document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();go(i+1)}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1)}
+    else if(e.key===' '){e.preventDefault();setRun(!running)}
+    else if(e.key==='r'||e.key==='R'){blockT=0;totalT=0;paint()}
+    else if(e.key==='n'||e.key==='N'){document.getElementById('notes').classList.toggle('on');fit()}
+    else if(e.key==='f'||e.key==='F'){document.documentElement.requestFullscreen?.()}
+    else if(e.key==='Home'){go(0)}
+    else if(e.key==='End'){go(slides.length-1)}
+  });
+  stage.addEventListener('click',e=>{
+    if(e.target.closest('.proto-nav')||e.target.closest('.proto-frame')) return;
+    go(e.clientX < window.innerWidth/2 ? i-1 : i+1);
+  });
+  document.querySelectorAll('.proto-nav button').forEach(b=>{
+    b.addEventListener('click',e=>{ e.stopPropagation(); go(i + (+b.dataset.go)); window.focus(); });
+  });
+
+  const q=new URLSearchParams(location.search).get('s');
+  if(q!==null) i=Math.max(0,Math.min(slides.length-1,parseInt(q,10)||0));
+  render(); fit();
+
+  const hud=document.getElementById('hud');
+  setTimeout(()=>hud.classList.add('hide'),6000);
+  document.addEventListener('mousemove',()=>{
+    hud.classList.remove('hide');
+    clearTimeout(window.__ht);
+    window.__ht=setTimeout(()=>hud.classList.add('hide'),2500);
+  });
+})();
+</script>
+</body>
+</html>
