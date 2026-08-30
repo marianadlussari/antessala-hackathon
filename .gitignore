@@ -1,0 +1,9 @@
+# runtime de agentes (Claude Code / AIOX) — nunca versionar
+.claude/
+# saída temporária do gerador de PDF
+_tmp/
+# python
+__pycache__/
+*.pyc
+# macOS
+.DS_Store
